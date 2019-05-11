@@ -25,8 +25,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
+    main.cpp \
+    mainwindow.cpp \
     editarcandidato.cpp \
     editarquestoes.cpp
 
@@ -36,9 +36,15 @@ HEADERS += \
     editarquestoes.h
 
 FORMS += \
-        mainwindow.ui \
+    mainwindow.ui \
     editarcandidato.ui \
     editarquestoes.ui
+
+# instalado via sudo apt-get install  libmysqlcppconn-dev
+LIBS += -lmysqlcppconn
+
+INCLUDEPATH += mysql-conn/include/jdbc
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
