@@ -93,8 +93,9 @@ int main() {
 
 		stmt->execute(
 		"	CREATE TABLE pessoa("
-		"		cpf INTEGER NOT NULL UNIQUE,"
+		"		cpf BIGINT NOT NULL UNIQUE,"
 		"		nome VARCHAR(100),"
+		"		universidade VARCHAR(100),"
 		"		PRIMARY KEY(cpf)"
 		"	);"
 		);
@@ -103,7 +104,7 @@ int main() {
 
 		stmt->execute(
 		"	CREATE TABLE proponente("
-		"		cpf INTEGER NOT NULL UNIQUE,"
+		"		cpf BIGINT NOT NULL UNIQUE,"
 		"		formacao_academica VARCHAR(100),"
 		"		PRIMARY KEY(cpf),"
 		"		FOREIGN KEY(cpf) REFERENCES pessoa(cpf)"
@@ -114,7 +115,7 @@ int main() {
 
 		stmt->execute(
 		"	CREATE TABLE candidato("
-		"		cpf INTEGER NOT NULL UNIQUE,"
+		"		cpf BIGINT NOT NULL UNIQUE,"
 		"		ranking_geral INTEGER,"
 		"		PRIMARY KEY(cpf),"
 		"		FOREIGN KEY(cpf) REFERENCES pessoa(cpf)"
@@ -125,7 +126,7 @@ int main() {
 
 		stmt->execute(
 		"	CREATE TABLE curador("
-		"		cpf INTEGER NOT NULL UNIQUE,"
+		"		cpf BIGINT NOT NULL UNIQUE,"
 		"		confiabilidade FLOAT,"
 		"		PRIMARY KEY(cpf),"
 		"		FOREIGN KEY(cpf) REFERENCES pessoa(cpf)"
@@ -137,7 +138,7 @@ int main() {
 		stmt->execute(
 		"	CREATE TABLE participa("
 		"		id INTEGER NOT NULL,"
-		"		cpf INTEGER NOT NULL,"
+		"		cpf BIGINT NOT NULL,"
 		"		ranking INTEGER,"
 		"		PRIMARY KEY(id, cpf),"
 		"		FOREIGN KEY(id) REFERENCES competicao_academica(id),"
@@ -150,7 +151,7 @@ int main() {
 		stmt->execute(
 		"	CREATE TABLE propoe("
 		"		id INTEGER NOT NULL,"
-		"		cpf INTEGER NOT NULL,"
+		"		cpf BIGINT NOT NULL,"
 		"		data DATE,"
 		"		PRIMARY KEY(id, cpf),"
 		"		FOREIGN KEY(id)"
@@ -164,7 +165,7 @@ int main() {
 		stmt->execute(
 		"	CREATE TABLE resolve("
 		"		id INTEGER NOT NULL,"
-		"		cpf INTEGER NOT NULL,"
+		"		cpf BIGINT NOT NULL,"
 		"		data DATE,"
 		"		codigo VARCHAR(1000),"
 		"		PRIMARY KEY(id, cpf),"
@@ -179,7 +180,7 @@ int main() {
 		stmt->execute(
 		"	CREATE TABLE monta("
 		"		id INTEGER NOT NULL,"
-		"		cpf INTEGER NOT NULL,"
+		"		cpf BIGINT NOT NULL,"
 		"		data DATE,"
 		"		PRIMARY KEY(id, cpf),"
 		"		FOREIGN KEY(id) REFERENCES prova(id),"
