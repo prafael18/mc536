@@ -27,8 +27,12 @@ int main() {
 		/* Escolhe a base de dados a ser utilizada */
 		stmt->execute("USE uni_competicoes;");
 
+		stmt->execute("DELETE FROM propoe;");
+		stmt->execute("DELETE FROM questao;");
+		stmt->execute("DELETE FROM topico;");
+
 		stmt->execute(
-			"INSERT INTO topico(nome, especificidade) VALUES('BEGGINNER', 1)"
+			"INSERT INTO topico(nome, especificidade) VALUES('BEGINNER', 1)"
 		);
 
 		stmt->execute(
@@ -56,7 +60,7 @@ int main() {
 		);
 
 		stmt->execute(
-			"INSERT INTO topico(nome, especificidade) VALUES('COMPUTATION GEOMETRY', 9)"
+			"INSERT INTO topico(nome, especificidade) VALUES('COMPUTATIONAL GEOMETRY', 9)"
 		);
 
 		stmt->execute(
