@@ -27,6 +27,12 @@ int main() {
 		/* Escolhe a base de dados a ser utilizada */
 		stmt->execute("USE uni_competicoes;");
 
+		stmt->execute("DELETE FROM propoe;");
+		stmt->execute("DELETE FROM questao;");
+		stmt->execute("DELETE FROM curador;");
+		stmt->execute("DELETE FROM proponente;");
+		stmt->execute("DELETE FROM candidato;");
+		stmt->execute("DELETE FROM pessoa;");
 
 		std::string strCpf, strNome, strRank, strUni;
 		std::ifstream cpfs("../../../../data/pessoas/cpfs.txt");
