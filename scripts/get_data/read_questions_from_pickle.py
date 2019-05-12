@@ -1,3 +1,4 @@
+import json
 import pickle
 import requests
 
@@ -38,10 +39,9 @@ class Question:
 		str = str + ("timelimit=%f" % self.timelimit) + ")"
 		return str
 
+	def toJSON(self):
+		return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
+
 file = open('../data/questions.pickle', 'rb')
 
 questions = pickle.load(file)
-
-for q in questions:
-	print(q)
-	print("***********************")
