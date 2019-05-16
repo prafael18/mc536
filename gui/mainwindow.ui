@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>282</width>
+    <width>308</width>
     <height>460</height>
    </rect>
   </property>
@@ -22,48 +22,83 @@
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
-        <string>Atualizações</string>
+        <string>Adicionar / Editar</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="2" column="0">
-         <widget class="QPushButton" name="pushButton_2">
+        <item row="9" column="0">
+         <widget class="QPushButton" name="pushButton_15">
           <property name="text">
-           <string>Editar Questões</string>
+           <string>Participa de Prova</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pushButton">
+        <item row="6" column="0">
+         <widget class="QPushButton" name="pushButton_5">
           <property name="text">
-           <string>Editar Candidatos</string>
+           <string>Competição Acadêmica</string>
           </property>
          </widget>
         </item>
         <item row="3" column="0">
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="pushButton_2">
           <property name="text">
-           <string>Editar Provas</string>
+           <string>Questão</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
-         <widget class="QPushButton" name="pushButton_5">
+        <item row="7" column="0">
+         <widget class="QPushButton" name="pushButton_8">
           <property name="text">
-           <string>Editar Competições</string>
+           <string>Resolve Questão</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="0">
-         <widget class="QPushButton" name="pushButton_6">
+        <item row="8" column="0">
+         <widget class="QPushButton" name="pushButton_14">
           <property name="text">
-           <string>Editar Tópicos</string>
+           <string>Propõe Questão</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="pushButton_13">
+          <property name="text">
+           <string>Proponente</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButton_12">
+          <property name="text">
+           <string>Curador</string>
           </property>
          </widget>
         </item>
         <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton_8">
+         <widget class="QPushButton" name="pushButton">
           <property name="text">
-           <string>Terminal SQL</string>
+           <string>Candidato</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string>Prova</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QPushButton" name="pushButton_6">
+          <property name="text">
+           <string>Tópico</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QPushButton" name="pushButton_16">
+          <property name="text">
+           <string>Monta Prova</string>
           </property>
          </widget>
         </item>
@@ -120,7 +155,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>282</width>
+     <width>308</width>
      <height>22</height>
     </rect>
    </property>

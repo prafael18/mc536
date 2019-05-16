@@ -6,14 +6,79 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>602</width>
-    <height>322</height>
+    <width>1004</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="7" column="2">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>Query Busca Candidato:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="21" column="3">
+    <widget class="QLineEdit" name="etRemoveCandidato"/>
+   </item>
+   <item row="16" column="2">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Query Adiciona em 'candidato':</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="3">
+    <widget class="QLineEdit" name="etAdicionaCandidato"/>
+   </item>
+   <item row="14" column="3" rowspan="2">
+    <widget class="QLineEdit" name="etAdicionaPessoa"/>
+   </item>
+   <item row="1" column="0" rowspan="20">
+    <widget class="QTableWidget" name="candidatosTable">
+     <property name="minimumSize">
+      <size>
+       <width>401</width>
+       <height>192</height>
+      </size>
+     </property>
+     <column>
+      <property name="text">
+       <string>CPF</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>ranking_geral</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Universidade</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QLineEdit" name="etNome"/>
+   </item>
+   <item row="7" column="3">
+    <widget class="QLineEdit" name="etBusca"/>
+   </item>
+   <item row="20" column="3">
+    <widget class="QLineEdit" name="etRemoveResolve"/>
+   </item>
+   <item row="19" column="3">
+    <widget class="QLineEdit" name="etRemoveParticipa"/>
+   </item>
    <item row="0" column="0">
     <widget class="QLabel" name="label_4">
      <property name="maximumSize">
@@ -30,10 +95,97 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="1" rowspan="5">
+   <item row="12" column="2">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLineEdit" name="etUniversidade"/>
+   </item>
+   <item row="20" column="2">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Query Remove candidato de 'resolve':</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Universidade:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="21" column="2">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Query Remove candidato:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="3">
+    <widget class="QLineEdit" name="etUpdate"/>
+   </item>
+   <item row="5" column="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="17" column="2">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="2" colspan="2">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>Atualizar Candidato</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" rowspan="21">
     <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="2" colspan="2">
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="text">
+      <string>Remover Candidato</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Nome:</string>
      </property>
     </widget>
    </item>
@@ -44,114 +196,154 @@
      </property>
     </widget>
    </item>
+   <item row="19" column="2">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Query Remove candidato de 'participa':</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="2">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Query Atualiza Pessoa:</string>
+     </property>
+    </widget>
+   </item>
    <item row="1" column="3">
-    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QLineEdit" name="etCpf"/>
    </item>
-   <item row="2" column="2">
-    <widget class="QLabel" name="label_2">
+   <item row="15" column="2">
+    <widget class="QLabel" name="label_6">
      <property name="text">
-      <string>Nome:</string>
+      <string>Query Adiciona em 'pessoa':</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="3">
-    <widget class="QLineEdit" name="lineEdit_2"/>
+   <item row="21" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Query Selecionar: </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="etSelectTable"/>
+     </item>
+    </layout>
    </item>
-   <item row="3" column="2">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Ranking Geral:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="3">
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="2" colspan="2">
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="text">
-      <string>Atualizar Candidato</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="2" colspan="2">
+   <item row="13" column="2" colspan="2">
     <widget class="QPushButton" name="pushButton">
      <property name="text">
       <string>Adicionar Candidato</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="0" rowspan="5">
-    <widget class="QTableWidget" name="tableWidget">
-     <property name="minimumSize">
+   <item row="9" column="2">
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
       <size>
-       <width>311</width>
-       <height>0</height>
+       <width>20</width>
+       <height>40</height>
       </size>
      </property>
-     <row>
-      <property name="text">
-       <string/>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string/>
-      </property>
-     </row>
-     <column>
-      <property name="text">
-       <string>CPF</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Nome</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>ranking_geral</string>
-      </property>
-     </column>
-     <item row="0" column="0">
-      <property name="text">
-       <string>55544433321</string>
-      </property>
-     </item>
-     <item row="0" column="1">
-      <property name="text">
-       <string>João da Silva</string>
-      </property>
-     </item>
-     <item row="0" column="2">
-      <property name="text">
-       <string>1</string>
-      </property>
-     </item>
-     <item row="1" column="0">
-      <property name="text">
-       <string>99988877734</string>
-      </property>
-     </item>
-     <item row="1" column="1">
-      <property name="text">
-       <string>Maria Antonieta</string>
-      </property>
-     </item>
-     <item row="1" column="2">
-      <property name="text">
-       <string>2</string>
-      </property>
-     </item>
+    </spacer>
+   </item>
+   <item row="6" column="2" colspan="2">
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="text">
+      <string>Buscar Candidato</string>
+     </property>
     </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Ranking Geral:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="QLineEdit" name="etRanking"/>
    </item>
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCandidato</receiver>
+   <slot>updateCandidato()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>994</x>
+     <y>259</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1046</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCandidato</receiver>
+   <slot>adicionarCandidato()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>994</x>
+     <y>346</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCandidato</receiver>
+   <slot>removerCandidato()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>959</x>
+     <y>463</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1131</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCandidato</receiver>
+   <slot>buscaCandidato()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>759</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1053</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>updateCandidato()</slot>
+  <slot>removerCandidato()</slot>
+  <slot>adicionarCandidato()</slot>
+  <slot>buscaCandidato()</slot>
+ </slots>
 </ui>
