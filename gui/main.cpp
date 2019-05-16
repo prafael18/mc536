@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     EditarCandidato w;
     w.show();
 
-    //    MainWindow w;
+//    MainWindow w;
 //    w.show();
 
 

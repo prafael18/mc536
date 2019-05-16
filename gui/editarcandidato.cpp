@@ -59,8 +59,6 @@ void EditarCandidato::updateTableCandidatos()
 
         ui->etSelectTable->setText(QString::fromStdString(query));
 
-        fflush(stdout);
-
         numCandidatos = 0;
         while (res->next()) {
             ui->candidatosTable->removeRow(numCandidatos);
