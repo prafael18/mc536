@@ -70,8 +70,11 @@ void EditarCandidato::updateTableCandidatos()
 void EditarCandidato::mostraQuestoes()
 {
     try {
-        std::string query = "select DISTINCT id, data, codigo "
-                "from resolve WHERE cpf = " + ui->etCpf->text().toStdString() + ";";
+        std::string query = \
+                "SELECT r.id, nome "
+                "FROM (SELECT id FROM resolve WHERE cpf = " + ui->etCpf->text().toStdString() + ") as r "
+                      "JOIN (SELECT id, nome from questao) as q "
+                      "ON r.id = q.id;";
 
         ui->etQuestao->setText(QString::fromStdString(query));
 
@@ -84,8 +87,7 @@ void EditarCandidato::mostraQuestoes()
             ui->questaoTable->insertRow(numQuestoes);
 
             ui->questaoTable->setItem(numQuestoes, 0, new QTableWidgetItem(QString::fromStdString(res->getString("id"))));
-            ui->questaoTable->setItem(numQuestoes, 1, new QTableWidgetItem(QString::fromStdString(res->getString("data"))));
-            ui->questaoTable->setItem(numQuestoes, 2, new QTableWidgetItem(QString::fromStdString(res->getString("codigo"))));
+            ui->questaoTable->setItem(numQuestoes, 1, new QTableWidgetItem(QString::fromStdString(res->getString("nome"))));
 
             ++numQuestoes;
         }

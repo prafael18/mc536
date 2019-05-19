@@ -119,7 +119,8 @@ void EditarCompeticoes::buscar()
             ++numTopicos;
         }
 
-
+        //TODO: Add total number of topics
+        
         query = "SELECT P.id, P.versao, P.id_fase, M.cpf, M.data "
                 "FROM prova AS P INNER JOIN fase as F ON F.id = P.id_fase "
                 "AND F.id_competicao = " + ui->etId->text().toStdString() +

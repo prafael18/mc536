@@ -122,14 +122,14 @@ public:
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         questaoTable = new QTableWidget(scrollAreaWidgetContents);
-        if (questaoTable->columnCount() < 3)
-            questaoTable->setColumnCount(3);
+        if (questaoTable->columnCount() < 2)
+            questaoTable->setColumnCount(2);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         questaoTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         questaoTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        questaoTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        // QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        // questaoTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         questaoTable->setObjectName(QString::fromUtf8("questaoTable"));
         questaoTable->setMinimumSize(QSize(0, 130));
 
@@ -390,11 +390,11 @@ public:
         label_4->setText(QApplication::translate("EditarCandidato", "Candidatos Ativos", nullptr));
         label_7->setText(QApplication::translate("EditarCandidato", "Query Selecionar: ", nullptr));
         QTableWidgetItem *___qtablewidgetitem = questaoTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("EditarCandidato", "Id", nullptr));
+        ___qtablewidgetitem->setText(QApplication::translate("EditarCandidato", "ID", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = questaoTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("EditarCandidato", "Data", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = questaoTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("EditarCandidato", "Codigo", nullptr));
+        ___qtablewidgetitem1->setText(QApplication::translate("EditarCandidato", "Nome", nullptr));
+        // QTableWidgetItem *___qtablewidgetitem2 = questaoTable->horizontalHeaderItem(2);
+        // ___qtablewidgetitem2->setText(QApplication::translate("EditarCandidato", "Codigo", nullptr));
         label_11->setText(QApplication::translate("EditarCandidato", "Query Remove candidato:", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = competicaoTable->horizontalHeaderItem(0);
         ___qtablewidgetitem3->setText(QApplication::translate("EditarCandidato", "id", nullptr));
