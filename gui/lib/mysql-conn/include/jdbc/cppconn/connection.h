@@ -45,7 +45,7 @@ namespace sql
 
 typedef sql::Variant ConnectPropertyVal;
 
-typedef std::map<sql::SQLString, ConnectPropertyVal> ConnectOptionsMap;
+typedef std::map< sql::SQLString, ConnectPropertyVal > ConnectOptionsMap;
 
 class DatabaseMetaData;
 class PreparedStatement;

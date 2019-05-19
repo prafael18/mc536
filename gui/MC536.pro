@@ -59,9 +59,9 @@ FORMS += \
     resolvedialog.ui
 
 # instalado via sudo apt-get install  libmysqlcppconn-dev
-LIBS += -lmysqlcppconn
+LIBS += lib/mysql-conn/lib64/libmysqlcppconn.so
 
-INCLUDEPATH += mysql-conn/include/jdbc
+INCLUDEPATH += lib/mysql-conn/include/jdbc
 
 
 # Default rules for deployment.
