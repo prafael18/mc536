@@ -25,17 +25,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    editarcompeticoes.cpp \
     main.cpp \
     mainwindow.cpp \
     editarcandidato.cpp \
     editarquestoes.cpp
 
 HEADERS += \
+    editarcompeticoes.h \
         mainwindow.h \
     editarcandidato.h \
     editarquestoes.h
 
 FORMS += \
+    editarcompeticoes.ui \
     mainwindow.ui \
     editarcandidato.ui \
     editarquestoes.ui

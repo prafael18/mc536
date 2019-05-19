@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditarCompeticoes</class>
+ <widget class="QDialog" name="EditarCompeticoes">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>680</width>
+    <height>424</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>Query Competições:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Competições Ativas</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" rowspan="3">
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="etCompeticoes"/>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QTableWidget" name="competicoesTable">
+     <column>
+      <property name="text">
+       <string>Id</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Data</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Local</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="0" column="3" rowspan="3">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-874</y>
+        <width>278</width>
+        <height>1348</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="28" column="2">
+        <widget class="QLineEdit" name="etNovoCandidato"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QPushButton" name="btAdicionar">
+         <property name="text">
+          <string>Adicionar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0" colspan="3">
+        <widget class="Line" name="line_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Nome:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="26" column="0" colspan="3">
+        <widget class="QTableWidget" name="candidatosTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>130</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>Cpf</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Ranking</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QLineEdit" name="etData"/>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QLineEdit" name="etId"/>
+       </item>
+       <item row="33" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Resolve</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Id:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="2">
+        <widget class="QLineEdit" name="etFases"/>
+       </item>
+       <item row="31" column="0" colspan="3">
+        <widget class="QTableWidget" name="questoesTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>140</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>IdQuestao</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>IdProva</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>VersaoProva</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>IdFase</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Local:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="22" column="2">
+        <widget class="QLineEdit" name="etProvas"/>
+       </item>
+       <item row="21" column="0" colspan="3">
+        <widget class="QTableWidget" name="provasTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>140</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>Id</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Versao</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Id_Fase</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Cpf</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Data</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Data:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0" colspan="3">
+        <widget class="QTableWidget" name="topicosTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>100</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>Nome</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="33" column="2">
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+       <item row="25" column="0" colspan="3">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Participantes</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="2">
+        <widget class="QLineEdit" name="etTopicos"/>
+       </item>
+       <item row="30" column="0" colspan="3">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Questões</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="QLineEdit" name="etNovoTopico"/>
+       </item>
+       <item row="20" column="0" colspan="3">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Provas</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="23" column="0" colspan="2">
+        <widget class="QPushButton" name="btMontaProva">
+         <property name="text">
+          <string>Montar Prova</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Query fases:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="27" column="2">
+        <widget class="QLineEdit" name="etCandidatos"/>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="QLineEdit" name="etLocal"/>
+       </item>
+       <item row="10" column="0" colspan="3">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Topicos</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="28" column="0" colspan="2">
+        <widget class="QPushButton" name="btNovoCandidato">
+         <property name="text">
+          <string>Novo Candidato</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0" colspan="2">
+        <widget class="QPushButton" name="btNovoTopico">
+         <property name="text">
+          <string>Novo Topico</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QPushButton" name="btBuscar">
+         <property name="text">
+          <string>Buscar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1" colspan="2">
+        <widget class="QLineEdit" name="etAtualizar"/>
+       </item>
+       <item row="23" column="2">
+        <widget class="QLineEdit" name="etMontaFase"/>
+       </item>
+       <item row="22" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Query Provas:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1" colspan="2">
+        <widget class="QLineEdit" name="etAdicionar"/>
+       </item>
+       <item row="19" column="0" colspan="3">
+        <widget class="Line" name="line_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0" colspan="3">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0" colspan="2">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Query topicos:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="29" column="0" colspan="3">
+        <widget class="Line" name="line_7">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="btAtualizar">
+         <property name="text">
+          <string>Atualizar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="0" colspan="2">
+        <widget class="QPushButton" name="btNovaFase">
+         <property name="text">
+          <string>Nova Fase</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="3">
+        <widget class="Line" name="line_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1" colspan="2">
+        <widget class="QLineEdit" name="etBuscar"/>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLineEdit" name="etNome"/>
+       </item>
+       <item row="15" column="0" colspan="3">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Fases</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="27" column="0" colspan="2">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Query Candidatos:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="2">
+        <widget class="QLineEdit" name="etNovaFase"/>
+       </item>
+       <item row="24" column="0" colspan="3">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0" colspan="3">
+        <widget class="QTableWidget" name="fasesTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>100</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>Id</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Numero Aprovados</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="32" column="2">
+        <widget class="QLineEdit" name="etQuestoes"/>
+       </item>
+       <item row="32" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Query Questoes:</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btBuscar</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCompeticoes</receiver>
+   <slot>buscar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>501</x>
+     <y>-53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>727</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btAtualizar</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCompeticoes</receiver>
+   <slot>atualizar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>501</x>
+     <y>-22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>721</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btAdicionar</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCompeticoes</receiver>
+   <slot>adicionar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>501</x>
+     <y>9</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>726</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btNovoCandidato</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCompeticoes</receiver>
+   <slot>novoCandidato()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>512</x>
+     <y>849</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>706</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btNovaFase</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCompeticoes</receiver>
+   <slot>novaFase()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>512</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>698</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btNovoTopico</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCompeticoes</receiver>
+   <slot>novoTopico()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>468</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>719</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>buscar()</slot>
+  <slot>adicionar()</slot>
+  <slot>atualizar()</slot>
+  <slot>novoCandidato()</slot>
+  <slot>novaFase()</slot>
+  <slot>novoTopico()</slot>
+ </slots>
+</ui>

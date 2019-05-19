@@ -1,7 +1,8 @@
-#ifndef EDITARQUESTOES_H
-#define EDITARQUESTOES_H
+#ifndef EDITARCOMPETICOES_H
+#define EDITARCOMPETICOES_H
 
 #include <QDialog>
+#include <memory>
 
 #include "mysql_driver.h"
 #include "mysql_connection.h"
@@ -10,30 +11,33 @@
 #include "cppconn/statement.h"
 
 namespace Ui {
-class EditarQuestoes;
+class EditarCompeticoes;
 }
 
-class EditarQuestoes : public QDialog
+class EditarCompeticoes : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit EditarQuestoes(QWidget *parent = nullptr);
-    ~EditarQuestoes();
+    explicit EditarCompeticoes(QWidget *parent = nullptr);
+    ~EditarCompeticoes();
 
 public slots:
     void buscar();
+    void novaFase();
     void adicionar();
     void atualizar();
-    void remover();
+    void novoTopico();
+    void novoCandidato();
 
 private:
+    Ui::EditarCompeticoes *ui;
+
     sql::Statement *stmt = nullptr;
     sql::Connection *con = nullptr;
-    Ui::EditarQuestoes *ui = nullptr;
     sql::mysql::MySQL_Driver *driver = nullptr;
 
-    void updateTableCandidatos();
+    void updateCompeticoes();
 };
 
-#endif // EDITARQUESTOES_H
+#endif // EDITARCOMPETICOES_H

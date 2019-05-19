@@ -28,7 +28,7 @@ EditarCandidato::EditarCandidato(QWidget *parent) :
         );
         msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Ok);
-        int ret = msgBox.exec();
+        msgBox.exec();
 
         std::cout << "# ERR: SQLException in " << __FILE__;
         std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
@@ -37,10 +37,20 @@ EditarCandidato::EditarCandidato(QWidget *parent) :
         std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
     }
 
+    QHeaderView* header = ui->questaoTable->horizontalHeader();
+    header->setSectionResizeMode(QHeaderView::Stretch);
+    header->setStretchLastSection(true);
+
+    header = ui->candidatosTable->horizontalHeader();
+    header->setSectionResizeMode(QHeaderView::Stretch);
+    header->setStretchLastSection(true);
+
+    header = ui->competicaoTable->horizontalHeader();
+    header->setSectionResizeMode(QHeaderView::Stretch);
+    header->setStretchLastSection(true);
+
     updateTableCandidatos();
 }
-
-
 
 
 EditarCandidato::~EditarCandidato()
@@ -55,25 +65,111 @@ void EditarCandidato::updateTableCandidatos()
 {
     try {
         std::string query = "SELECT P.cpf, P.nome, P.universidade, C.ranking_geral FROM candidato as C INNER JOIN pessoa as P ON C.cpf = P.cpf;";
-        sql::ResultSet  *res = stmt->executeQuery(query);
+        std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(query));
 
         ui->etSelectTable->setText(QString::fromStdString(query));
 
+        ui->candidatosTable->setRowCount(0);
+
         numCandidatos = 0;
+
         while (res->next()) {
-            ui->candidatosTable->removeRow(numCandidatos);
             ui->candidatosTable->insertRow(numCandidatos);
 
-            ui->candidatosTable->setItem(numCandidatos, 0, new QTableWidgetItem(QString::number(res->getInt64(1))));
+            ui->candidatosTable->setItem(numCandidatos, 0, new QTableWidgetItem(QString::fromStdString(res->getString("cpf"))));
             ui->candidatosTable->setItem(numCandidatos, 1, new QTableWidgetItem(QString::fromStdString(res->getString("nome"))));
             ui->candidatosTable->setItem(numCandidatos, 3, new QTableWidgetItem(QString::fromStdString(res->getString("universidade"))));
-            ui->candidatosTable->setItem(numCandidatos, 2, new QTableWidgetItem(QString::number(res->getInt64(4))));
+            ui->candidatosTable->setItem(numCandidatos, 2, new QTableWidgetItem(QString::fromStdString(res->getString("ranking_geral"))));
 
             ++numCandidatos;
         }
-
-        delete res;
     } catch (sql::SQLException &e) {
+        std::cout << "# ERR: SQLException in " << __FILE__;
+        std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
+        std::cout << "# ERR: " << e.what();
+        std::cout << " (MySQL error code: " << e.getErrorCode();
+        std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
+    }
+}
+
+void EditarCandidato::mostraQuestoes()
+{
+    try {
+        std::string query = "select DISTINCT id, data, codigo "
+                "from resolve WHERE cpf = " + ui->etCpf->text().toStdString() + ";";
+
+        ui->etQuestao->setText(QString::fromStdString(query));
+
+        std::unique_ptr<sql::ResultSet>  res(stmt->executeQuery(query));
+
+        ui->questaoTable->setRowCount(0);
+
+        int numQuestoes = 0;
+        while(res->next()) {
+            ui->questaoTable->insertRow(numQuestoes);
+
+            ui->questaoTable->setItem(numQuestoes, 0, new QTableWidgetItem(QString::fromStdString(res->getString("id"))));
+            ui->questaoTable->setItem(numQuestoes, 1, new QTableWidgetItem(QString::fromStdString(res->getString("data"))));
+            ui->questaoTable->setItem(numQuestoes, 2, new QTableWidgetItem(QString::fromStdString(res->getString("codigo"))));
+
+            ++numQuestoes;
+        }
+
+        fflush(stdout);
+    } catch (sql::SQLException &e) {
+        QMessageBox msgBox;
+        msgBox.setText(
+            "SQL ERROR: " + QString::fromStdString(e.what()) +
+            "\n\n(MySQL error code: " + QString::number(e.getErrorCode()) +
+            ", SQLState: " + QString::fromStdString(e.getSQLState()) + ")"
+        );
+        msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        msgBox.exec();
+
+        std::cout << "# ERR: SQLException in " << __FILE__;
+        std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
+        std::cout << "# ERR: " << e.what();
+        std::cout << " (MySQL error code: " << e.getErrorCode();
+        std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
+    }
+}
+
+
+void EditarCandidato::mostraCompeticao()
+{
+    try {
+        std::string query = "select DISTINCT id, ranking "
+                "from participa WHERE cpf = " + ui->etCpf->text().toStdString() + ";";
+
+        ui->etCompeticao->setText(QString::fromStdString(query));
+
+        std::unique_ptr<sql::ResultSet>  res(stmt->executeQuery(query));
+
+        ui->competicaoTable->setRowCount(0);
+
+        int numCompeticoes = 0;
+        while(res->next()) {
+            ui->competicaoTable->insertRow(numCompeticoes);
+
+            ui->competicaoTable->setItem(numCompeticoes, 0, new QTableWidgetItem(QString::fromStdString(res->getString("id"))));
+            ui->competicaoTable->setItem(numCompeticoes, 1, new QTableWidgetItem(QString::fromStdString(res->getString("ranking"))));
+
+            ++numCompeticoes;
+        }
+
+        fflush(stdout);
+    } catch (sql::SQLException &e) {
+        QMessageBox msgBox;
+        msgBox.setText(
+            "SQL ERROR: " + QString::fromStdString(e.what()) +
+            "\n\n(MySQL error code: " + QString::number(e.getErrorCode()) +
+            ", SQLState: " + QString::fromStdString(e.getSQLState()) + ")"
+        );
+        msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        msgBox.exec();
+
         std::cout << "# ERR: SQLException in " << __FILE__;
         std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
         std::cout << "# ERR: " << e.what();
@@ -84,7 +180,9 @@ void EditarCandidato::updateTableCandidatos()
 
 void EditarCandidato::updateCandidato()
 {
-    queryAtualizar = "UPDATE pessoa SET nome = '" + ui->etNome->text().toStdString() + "' WHERE cpf = " + ui->etCpf->text().toStdString() + ";";
+    queryAtualizar = "UPDATE pessoa SET nome = '" + ui->etNome->text().toStdString() + "', "
+            "universidade = '" + ui->etUniversidade->text().toStdString() +
+            "' WHERE cpf = " + ui->etCpf->text().toStdString() + ";";
 
     ui->etUpdate->setText(QString::fromStdString(queryAtualizar));
 
@@ -119,11 +217,15 @@ void EditarCandidato::buscaCandidato()
                             ui->etCpf->text().toStdString() +
                             " AND P.cpf = " + ui->etCpf->text().toStdString() + ";";
 
-        sql::ResultSet  *res = stmt->executeQuery(query);
+        std::unique_ptr<sql::ResultSet>  res(stmt->executeQuery(query));
 
         ui->etBusca->setText(QString::fromStdString(query));
 
         fflush(stdout);
+
+        ui->etNome->setText("");
+        ui->etUniversidade->setText("");
+        ui->etRanking->setText("");
 
         numCandidatos = 0;
         while (res->next()) {
@@ -134,8 +236,6 @@ void EditarCandidato::buscaCandidato()
 
             ++numCandidatos;
         }
-
-        delete res;
     } catch (sql::SQLException &e) {
         QMessageBox msgBox;
         msgBox.setText(
@@ -153,6 +253,9 @@ void EditarCandidato::buscaCandidato()
         std::cout << " (MySQL error code: " << e.getErrorCode();
         std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
     }
+
+    mostraQuestoes();
+    mostraCompeticao();
 }
 
 void EditarCandidato::removerCandidato()

@@ -3,7 +3,6 @@
 
 #include "editarcandidato.h"
 #include "editarquestoes.h"
-
 #include <QMainWindow>
 
 namespace Ui {

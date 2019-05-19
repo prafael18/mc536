@@ -207,7 +207,7 @@ int main() {
 		"		id INTEGER NOT NULL,"
 		"		nome VARCHAR(100) NOT NULL,"
 		"		PRIMARY KEY(id, nome),"
-		"		FOREIGN KEY(id) REFERENCES prova(id),"
+		"		FOREIGN KEY(id) REFERENCES competicao_academica(id),"
 		"		FOREIGN KEY(nome) REFERENCES topico(nome)"
 		"	);"
 		);

@@ -168,7 +168,7 @@ int main() {
 							// std::cout << "Topico: " << topico << std::endl;
 
 							stmt->execute("INSERT IGNORE INTO contempla(id, nome)"
-								"VALUES(" + std::to_string(idProva) + ", '" + topico +"');"
+								"VALUES(" + std::to_string(idCompeticao) + ", '" + topico +"');"
 							);
 						}
 
@@ -201,7 +201,7 @@ int main() {
 					}
 
 					std::sort(aux.begin(), aux.end(), [] (const std::pair<long long, int>& p1, const std::pair<long long, int>& p2) -> bool {
-					   return p1.second < p2.second;
+					   return p1.second > p2.second;
 					});
 
 					for (int i = 0; i < aux.size(); ++i) {

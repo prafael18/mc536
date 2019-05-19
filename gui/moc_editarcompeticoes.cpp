@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'editarcandidato.h'
+** Meta object code from reading C++ file 'editarcompeticoes.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.12.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "editarcandidato.h"
+#include "editarcompeticoes.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'editarcandidato.h' doesn't include <QObject>."
+#error "The header file 'editarcompeticoes.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.12.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -20,35 +20,34 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_EditarCandidato_t {
+struct qt_meta_stringdata_EditarCompeticoes_t {
     QByteArrayData data[8];
-    char stringdata0[116];
+    char stringdata0[80];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_EditarCandidato_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_EditarCompeticoes_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_EditarCandidato_t qt_meta_stringdata_EditarCandidato = {
+static const qt_meta_stringdata_EditarCompeticoes_t qt_meta_stringdata_EditarCompeticoes = {
     {
-QT_MOC_LITERAL(0, 0, 15), // "EditarCandidato"
-QT_MOC_LITERAL(1, 16, 14), // "mostraQuestoes"
-QT_MOC_LITERAL(2, 31, 0), // ""
-QT_MOC_LITERAL(3, 32, 14), // "buscaCandidato"
-QT_MOC_LITERAL(4, 47, 15), // "updateCandidato"
-QT_MOC_LITERAL(5, 63, 16), // "mostraCompeticao"
-QT_MOC_LITERAL(6, 80, 16), // "removerCandidato"
-QT_MOC_LITERAL(7, 97, 18) // "adicionarCandidato"
+QT_MOC_LITERAL(0, 0, 17), // "EditarCompeticoes"
+QT_MOC_LITERAL(1, 18, 6), // "buscar"
+QT_MOC_LITERAL(2, 25, 0), // ""
+QT_MOC_LITERAL(3, 26, 8), // "novaFase"
+QT_MOC_LITERAL(4, 35, 9), // "adicionar"
+QT_MOC_LITERAL(5, 45, 9), // "atualizar"
+QT_MOC_LITERAL(6, 55, 10), // "novoTopico"
+QT_MOC_LITERAL(7, 66, 13) // "novoCandidato"
 
     },
-    "EditarCandidato\0mostraQuestoes\0\0"
-    "buscaCandidato\0updateCandidato\0"
-    "mostraCompeticao\0removerCandidato\0"
-    "adicionarCandidato"
+    "EditarCompeticoes\0buscar\0\0novaFase\0"
+    "adicionar\0atualizar\0novoTopico\0"
+    "novoCandidato"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_EditarCandidato[] = {
+static const uint qt_meta_data_EditarCompeticoes[] = {
 
  // content:
        8,       // revision
@@ -80,48 +79,48 @@ static const uint qt_meta_data_EditarCandidato[] = {
        0        // eod
 };
 
-void EditarCandidato::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void EditarCompeticoes::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<EditarCandidato *>(_o);
+        auto *_t = static_cast<EditarCompeticoes *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->mostraQuestoes(); break;
-        case 1: _t->buscaCandidato(); break;
-        case 2: _t->updateCandidato(); break;
-        case 3: _t->mostraCompeticao(); break;
-        case 4: _t->removerCandidato(); break;
-        case 5: _t->adicionarCandidato(); break;
+        case 0: _t->buscar(); break;
+        case 1: _t->novaFase(); break;
+        case 2: _t->adicionar(); break;
+        case 3: _t->atualizar(); break;
+        case 4: _t->novoTopico(); break;
+        case 5: _t->novoCandidato(); break;
         default: ;
         }
     }
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject EditarCandidato::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject EditarCompeticoes::staticMetaObject = { {
     &QDialog::staticMetaObject,
-    qt_meta_stringdata_EditarCandidato.data,
-    qt_meta_data_EditarCandidato,
+    qt_meta_stringdata_EditarCompeticoes.data,
+    qt_meta_data_EditarCompeticoes,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *EditarCandidato::metaObject() const
+const QMetaObject *EditarCompeticoes::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *EditarCandidato::qt_metacast(const char *_clname)
+void *EditarCompeticoes::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_EditarCandidato.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_EditarCompeticoes.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int EditarCandidato::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int EditarCompeticoes::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

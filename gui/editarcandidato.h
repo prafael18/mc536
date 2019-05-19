@@ -2,6 +2,7 @@
 #define EDITARCANDIDATO_H
 
 #include <QDialog>
+#include <memory>
 
 #include "mysql_driver.h"
 #include "mysql_connection.h"
@@ -22,8 +23,10 @@ public:
     ~EditarCandidato();
 
 public slots:
-    void updateCandidato();
+    void mostraQuestoes();
     void buscaCandidato();
+    void updateCandidato();
+    void mostraCompeticao();
     void removerCandidato();
     void adicionarCandidato();
 
@@ -35,10 +38,13 @@ private:
 
     void updateTableCandidatos();
 
+    int numQuestoes = 0;
     int numCandidatos = 0;
+    int numCompeticoes = 0;
     std::string queryAdicionar;
     std::string queryRemover;
     std::string queryAtualizar;
+
 };
 
 #endif // EDITARCANDIDATO_H
