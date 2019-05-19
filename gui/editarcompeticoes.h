@@ -19,7 +19,7 @@ class EditarCompeticoes : public QDialog
     Q_OBJECT
 
 public:
-    explicit EditarCompeticoes(QWidget *parent = nullptr);
+    explicit EditarCompeticoes(QWidget *parent = nullptr, sql::Statement *_stmt = nullptr);
     ~EditarCompeticoes();
 
 public slots:
@@ -28,14 +28,15 @@ public slots:
     void adicionar();
     void atualizar();
     void novoTopico();
+    void montaProva();
+    void novaQuestao();
     void novoCandidato();
+    void resolve();
 
 private:
     Ui::EditarCompeticoes *ui;
 
     sql::Statement *stmt = nullptr;
-    sql::Connection *con = nullptr;
-    sql::mysql::MySQL_Driver *driver = nullptr;
 
     void updateCompeticoes();
 };

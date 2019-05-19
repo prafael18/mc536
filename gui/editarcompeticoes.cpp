@@ -1,4 +1,6 @@
 #include "editarcompeticoes.h"
+#include "montadialog.h"
+#include "resolvedialog.h"
 #include "ui_editarcompeticoes.h"
 
 #include <QCheckBox>
@@ -6,7 +8,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 
-EditarCompeticoes::EditarCompeticoes(QWidget *parent) :
+EditarCompeticoes::EditarCompeticoes(QWidget *parent, sql::Statement *_stmt) :
     QDialog(parent),
     ui(new Ui::EditarCompeticoes)
 {
@@ -38,29 +40,7 @@ EditarCompeticoes::EditarCompeticoes(QWidget *parent) :
     header->setSectionResizeMode(QHeaderView::Stretch);
     header->setStretchLastSection(true);
 
-    try {
-        driver = sql::mysql::get_mysql_driver_instance();
-        con = driver->connect("tcp://localhost:3306", "root", "password");
-
-        stmt = con->createStatement();
-        stmt->execute("USE uni_competicoes");
-    } catch (sql::SQLException &e) {
-        QMessageBox msgBox;
-        msgBox.setText(
-            "SQL ERROR: " + QString::fromStdString(e.what()) +
-            "\n\n(MySQL error code: " + QString::number(e.getErrorCode()) +
-            ", SQLState: " + QString::fromStdString(e.getSQLState()) + ")"
-        );
-        msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-        msgBox.setDefaultButton(QMessageBox::Ok);
-        msgBox.exec();
-
-        std::cout << "# ERR: SQLException in " << __FILE__;
-        std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
-        std::cout << "# ERR: " << e.what();
-        std::cout << " (MySQL error code: " << e.getErrorCode();
-        std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
-    }
+    stmt = _stmt;
 
     updateCompeticoes();
 }
@@ -361,6 +341,94 @@ void EditarCompeticoes::novoTopico()
     buscar();
 }
 
+void EditarCompeticoes::montaProva()
+{
+    std::unique_ptr<MontaDialog> dialog(new MontaDialog());
+
+    if (dialog->exec()) {
+        try {
+            std::string query = "INSERT INTO prova(id, versao, id_fase) "
+                                "VALUES(" + dialog->getId().toStdString() +
+                                ", " + dialog->getVersao().toStdString() +
+                                ", " + dialog->getFase().toStdString() +
+                                ")";
+
+            ui->etAddProva->setText(QString::fromStdString(query));
+            stmt->execute(query);
+
+            query = "INSERT INTO monta(id, cpf, data) "
+                                "VALUES(" + dialog->getId().toStdString() +
+                                ", " + dialog->getCpf().toStdString() +
+                                ", '" + dialog->getData().toStdString() +
+                                "')";
+
+            ui->etAddMonta->setText(QString::fromStdString(query));
+            stmt->execute(query);
+        } catch (sql::SQLException &e) {
+            QMessageBox msgBox;
+            msgBox.setText(
+                "SQL ERROR: " + QString::fromStdString(e.what()) +
+                "\n\n(MySQL error code: " + QString::number(e.getErrorCode()) +
+                ", SQLState: " + QString::fromStdString(e.getSQLState()) + ")"
+            );
+            msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+            msgBox.setDefaultButton(QMessageBox::Ok);
+            msgBox.exec();
+
+            std::cout << "# ERR: SQLException in " << __FILE__;
+            std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
+            std::cout << "# ERR: " << e.what();
+            std::cout << " (MySQL error code: " << e.getErrorCode();
+            std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
+        }
+    }
+
+    buscar();
+}
+
+void EditarCompeticoes::novaQuestao()
+{
+    bool ok;
+    QString idQuestao = QInputDialog::getText(this, tr("Adiciona Questao"),
+                                             tr("Id Questao:"), QLineEdit::Normal,
+                                             "", &ok);
+    if (ok && !idQuestao.isEmpty()){
+        bool ok;
+        QString idProva = QInputDialog::getText(this, tr("Adiciona Questao"),
+                                                 tr("Id Prova:"), QLineEdit::Normal,
+                                                 "", &ok);
+        if (ok && !idProva.isEmpty()) {
+            try {
+                std::string query = "INSERT INTO possui(id_prova, id_questao) "
+                                    "VALUES(" + idProva.toStdString() +
+                                    ", " + idQuestao.toStdString() +")";
+
+                ui->etAddQuestao->setText(QString::fromStdString(query));
+
+                stmt->execute(query);
+            } catch (sql::SQLException &e) {
+                QMessageBox msgBox;
+                msgBox.setText(
+                    "SQL ERROR: " + QString::fromStdString(e.what()) +
+                    "\n\n(MySQL error code: " + QString::number(e.getErrorCode()) +
+                    ", SQLState: " + QString::fromStdString(e.getSQLState()) + ")"
+                );
+                msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+                msgBox.setDefaultButton(QMessageBox::Ok);
+                msgBox.exec();
+
+                std::cout << "# ERR: SQLException in " << __FILE__;
+                std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
+                std::cout << "# ERR: " << e.what();
+                std::cout << " (MySQL error code: " << e.getErrorCode();
+                std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
+            }
+        }
+    }
+
+    buscar();
+}
+
 void EditarCompeticoes::novoCandidato()
 {
     bool ok;
@@ -404,6 +472,42 @@ void EditarCompeticoes::novoCandidato()
     }
 
     buscar();
+}
+
+void EditarCompeticoes::resolve()
+{
+    std::unique_ptr<ResolveDialog> dialog(new ResolveDialog());
+
+    if(dialog->exec()) {
+        try {
+            std::string query = "INSERT INTO resolve(id, cpf, data, codigo) "
+                                "VALUES(" + dialog->getIdQuestao().toStdString() +
+                                ", " + dialog->getCpf().toStdString() +
+                                ", '" + dialog->getData().toStdString() +
+                                "', '" + dialog->getCodigo().toStdString() +
+                                "')";
+
+            ui->etResolve->setText(QString::fromStdString(query));
+
+            stmt->execute(query);
+        } catch (sql::SQLException &e) {
+            QMessageBox msgBox;
+            msgBox.setText(
+                "SQL ERROR: " + QString::fromStdString(e.what()) +
+                "\n\n(MySQL error code: " + QString::number(e.getErrorCode()) +
+                ", SQLState: " + QString::fromStdString(e.getSQLState()) + ")"
+            );
+            msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+            msgBox.setDefaultButton(QMessageBox::Ok);
+            msgBox.exec();
+
+            std::cout << "# ERR: SQLException in " << __FILE__;
+            std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
+            std::cout << "# ERR: " << e.what();
+            std::cout << " (MySQL error code: " << e.getErrorCode();
+            std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
+        }
+    }
 }
 
 void EditarCompeticoes::updateCompeticoes() {

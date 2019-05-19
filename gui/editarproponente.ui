@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditarProponente</class>
+ <widget class="QDialog" name="EditarProponente">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>732</width>
+    <height>634</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="ProponentesAtivos">
+     <property name="text">
+      <string>Proponentes</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" rowspan="19">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Cpf:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QLineEdit" name="etCpf"/>
+   </item>
+   <item row="1" column="0" rowspan="17" colspan="2">
+    <widget class="QTableWidget" name="proponenteTable">
+     <column>
+      <property name="text">
+       <string>Cpf</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Universidade</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Formação Acadêmica</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Nome:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLineEdit" name="etNome"/>
+   </item>
+   <item row="2" column="3">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Universidade:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QLineEdit" name="etUniversidade"/>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Formação:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QLineEdit" name="etFormacao"/>
+   </item>
+   <item row="4" column="3" colspan="2">
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="3">
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="text">
+      <string>Buscar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="4">
+    <widget class="QLineEdit" name="etBuscar"/>
+   </item>
+   <item row="6" column="3" colspan="2">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>Adicionar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="3">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Query Pessoa:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="4">
+    <widget class="QLineEdit" name="etAdicionarPessoa"/>
+   </item>
+   <item row="8" column="3">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>Query Proponente:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="4">
+    <widget class="QLineEdit" name="etAdicionarProponente"/>
+   </item>
+   <item row="9" column="3" colspan="2">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Atualizar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="3">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Query Pessoa:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="4">
+    <widget class="QLineEdit" name="etUpdatePessoa"/>
+   </item>
+   <item row="11" column="3">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Query Proponente:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="4">
+    <widget class="QLineEdit" name="etUpdateProponente"/>
+   </item>
+   <item row="12" column="3" colspan="2">
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="text">
+      <string>Remover</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="3">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Query Propoe:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="4">
+    <widget class="QLineEdit" name="etRemovePropoe"/>
+   </item>
+   <item row="14" column="3">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>Query Proponente:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="4">
+    <widget class="QLineEdit" name="etRemoveProponente"/>
+   </item>
+   <item row="15" column="3" colspan="2">
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="3" colspan="2">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Questões Propostas</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="3" colspan="2">
+    <widget class="QTableWidget" name="questoesTable">
+     <column>
+      <property name="text">
+       <string>Id</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Data</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="18" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Query Proponentes:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="1">
+    <widget class="QLineEdit" name="etProponente"/>
+   </item>
+   <item row="18" column="3">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Query Questões:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="4">
+    <widget class="QLineEdit" name="etQuestoes"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarProponente</receiver>
+   <slot>buscar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>487</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>793</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarProponente</receiver>
+   <slot>adicionar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>541</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>160</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarProponente</receiver>
+   <slot>atualizar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>523</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>763</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarProponente</receiver>
+   <slot>remover()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>526</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>353</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>buscar()</slot>
+  <slot>adicionar()</slot>
+  <slot>atualizar()</slot>
+  <slot>remover()</slot>
+ </slots>
+</ui>

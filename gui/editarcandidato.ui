@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1004</width>
-    <height>738</height>
+    <width>829</width>
+    <height>436</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,102 +53,13 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-227</y>
-        <width>474</width>
-        <height>952</height>
+        <y>-5</y>
+        <width>388</width>
+        <height>881</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="28" column="0">
-        <widget class="QLabel" name="label_10">
-         <property name="text">
-          <string>Query Remove candidato de 'resolve':</string>
-         </property>
-        </widget>
-       </item>
-       <item row="27" column="0">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Query Remove candidato de 'participa':</string>
-         </property>
-        </widget>
-       </item>
-       <item row="28" column="1">
-        <widget class="QLineEdit" name="etRemoveResolve"/>
-       </item>
-       <item row="19" column="1">
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="text">
-          <string>Atualizar Candidato</string>
-         </property>
-        </widget>
-       </item>
-       <item row="16" column="1">
-        <widget class="QPushButton" name="pushButton_4">
-         <property name="text">
-          <string>Buscar Candidato</string>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="0" colspan="2">
-        <widget class="Line" name="line_5">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="0" colspan="2">
-        <widget class="QLabel" name="label_17">
-         <property name="text">
-          <string>Competições Participadas:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QLineEdit" name="etRanking"/>
-       </item>
-       <item row="21" column="0" colspan="2">
-        <widget class="Line" name="line_6">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Nome:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0" colspan="2">
-        <widget class="QLabel" name="label_16">
-         <property name="text">
-          <string>Questões Resolvidas</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Query Atualiza Pessoa:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="0">
-        <widget class="QLabel" name="label_12">
-         <property name="text">
-          <string>Query Busca Candidato:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0" colspan="2">
+       <item row="14" column="0" colspan="2">
         <widget class="QTableWidget" name="questaoTable">
          <property name="minimumSize">
           <size>
@@ -173,95 +84,17 @@
          </column>
         </widget>
        </item>
-       <item row="29" column="0">
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="etNome"/>
+       </item>
+       <item row="35" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
           <string>Query Remove candidato:</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="etNome"/>
-       </item>
-       <item row="22" column="1">
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>Adicionar Candidato</string>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="1">
-        <widget class="QLineEdit" name="etUpdate"/>
-       </item>
-       <item row="6" column="0" colspan="2">
-        <widget class="Line" name="line_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_13">
-         <property name="text">
-          <string>Ranking Geral:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="1">
-        <widget class="QLineEdit" name="etCompeticao"/>
-       </item>
-       <item row="0" column="0" colspan="2">
-        <widget class="QLabel" name="label_18">
-         <property name="text">
-          <string>Informações Gerais</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Query Questões Resolvidas:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="27" column="1">
-        <widget class="QLineEdit" name="etRemoveParticipa"/>
-       </item>
-       <item row="14" column="0">
-        <widget class="QLabel" name="label_15">
-         <property name="text">
-          <string>Query Competições Participada:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="etUniversidade"/>
-       </item>
-       <item row="11" column="0" colspan="2">
-        <widget class="Line" name="line_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="24" column="0">
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Query Adiciona em 'candidato':</string>
-         </property>
-        </widget>
-       </item>
-       <item row="26" column="1">
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="text">
-          <string>Remover Candidato</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="0" colspan="2">
+       <item row="20" column="0" colspan="2">
         <widget class="QTableWidget" name="competicaoTable">
          <property name="minimumSize">
           <size>
@@ -281,42 +114,175 @@
          </column>
         </widget>
        </item>
-       <item row="23" column="1">
-        <widget class="QLineEdit" name="etAdicionaPessoa"/>
+       <item row="27" column="0" colspan="2">
+        <widget class="Line" name="line_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
        </item>
-       <item row="10" column="1">
-        <widget class="QLineEdit" name="etQuestao"/>
+       <item row="30" column="1">
+        <widget class="QLineEdit" name="etAdicionaCandidato"/>
        </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="etCpf"/>
+       <item row="34" column="1">
+        <widget class="QLineEdit" name="etRemoveResolve"/>
        </item>
-       <item row="29" column="1">
-        <widget class="QLineEdit" name="etRemoveCandidato"/>
+       <item row="33" column="1">
+        <widget class="QLineEdit" name="etRemoveParticipa"/>
        </item>
-       <item row="17" column="1">
-        <widget class="QLineEdit" name="etBusca"/>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Nome:</string>
+         </property>
+        </widget>
        </item>
-       <item row="25" column="0" colspan="2">
+       <item row="31" column="0" colspan="2">
         <widget class="Line" name="line_7">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="15" column="0" colspan="2">
-        <widget class="Line" name="line_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="etCpf"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="text">
+          <string>Buscar Candidato</string>
          </property>
         </widget>
        </item>
-       <item row="24" column="1">
-        <widget class="QLineEdit" name="etAdicionaCandidato"/>
+       <item row="19" column="0" colspan="2">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Competições Participadas:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
           <string>Universidade:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="29" column="1">
+        <widget class="QLineEdit" name="etAdicionaPessoa"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="etUniversidade"/>
+       </item>
+       <item row="35" column="1">
+        <widget class="QLineEdit" name="etRemoveCandidato"/>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="Line" name="line_8">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="22" column="1">
+        <widget class="QLineEdit" name="etCompeticao"/>
+       </item>
+       <item row="11" column="0" colspan="2">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0" colspan="2">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Questões Resolvidas</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="29" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Query Adiciona em 'pessoa':</string>
+         </property>
+        </widget>
+       </item>
+       <item row="33" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Query Remove candidato de 'participa':</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>Atualizar Candidato</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>Informações Gerais</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="1">
+        <widget class="QLineEdit" name="etQuestao"/>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="etBusca"/>
+       </item>
+       <item row="30" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Query Adiciona em 'candidato':</string>
+         </property>
+        </widget>
+       </item>
+       <item row="34" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Query Remove candidato de 'resolve':</string>
+         </property>
+        </widget>
+       </item>
+       <item row="22" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Query Competições Participada:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="0" colspan="2">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Ranking Geral:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0" colspan="2">
+        <widget class="Line" name="line_9">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
@@ -327,22 +293,35 @@
          </property>
         </widget>
        </item>
-       <item row="23" column="0">
-        <widget class="QLabel" name="label_6">
+       <item row="16" column="0">
+        <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>Query Adiciona em 'pessoa':</string>
+          <string>Query Questões Resolvidas:</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0" colspan="2">
-        <widget class="Line" name="line_8">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="etRanking"/>
+       </item>
+       <item row="10" column="1">
+        <widget class="QLineEdit" name="etUpdate"/>
+       </item>
+       <item row="28" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Adicionar Candidato</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="0" colspan="2">
-        <widget class="Line" name="line_9">
+       <item row="32" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="text">
+          <string>Remover Candidato</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="2">
+        <widget class="Line" name="line_4">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>

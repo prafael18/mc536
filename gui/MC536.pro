@@ -26,22 +26,37 @@ CONFIG += c++11
 
 SOURCES += \
     editarcompeticoes.cpp \
+    editarcurador.cpp \
+    editarproponente.cpp \
+    editartopico.cpp \
     main.cpp \
     mainwindow.cpp \
     editarcandidato.cpp \
-    editarquestoes.cpp
+    editarquestoes.cpp \
+    montadialog.cpp \
+    resolvedialog.cpp
 
 HEADERS += \
     editarcompeticoes.h \
+    editarcurador.h \
+    editarproponente.h \
+    editartopico.h \
         mainwindow.h \
     editarcandidato.h \
-    editarquestoes.h
+    editarquestoes.h \
+    montadialog.h \
+    resolvedialog.h
 
 FORMS += \
     editarcompeticoes.ui \
+    editarcurador.ui \
+    editarproponente.ui \
+    editartopico.ui \
     mainwindow.ui \
     editarcandidato.ui \
-    editarquestoes.ui
+    editarquestoes.ui \
+    montadialog.ui \
+    resolvedialog.ui
 
 # instalado via sudo apt-get install  libmysqlcppconn-dev
 LIBS += -lmysqlcppconn

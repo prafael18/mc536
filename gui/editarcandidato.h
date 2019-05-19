@@ -19,7 +19,7 @@ class EditarCandidato : public QDialog
     Q_OBJECT
 
 public:
-    explicit EditarCandidato(QWidget *parent = nullptr);
+    explicit EditarCandidato(QWidget *parent = nullptr, sql::Statement *_stmt = nullptr);
     ~EditarCandidato();
 
 public slots:
@@ -32,9 +32,7 @@ public slots:
 
 private:
     sql::Statement *stmt = nullptr;
-    sql::Connection *con = nullptr;
     Ui::EditarCandidato *ui = nullptr;
-    sql::mysql::MySQL_Driver *driver = nullptr;
 
     void updateTableCandidatos();
 

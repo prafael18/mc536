@@ -3,7 +3,7 @@
 
 #include <QMessageBox>
 
-EditarQuestoes::EditarQuestoes(QWidget *parent) :
+EditarQuestoes::EditarQuestoes(QWidget *parent, sql::Statement *_stmt) :
     QDialog(parent),
     ui(new Ui::EditarQuestoes)
 {
@@ -18,11 +18,7 @@ EditarQuestoes::EditarQuestoes(QWidget *parent) :
     header->setStretchLastSection(true);
 
     try {
-        driver = sql::mysql::get_mysql_driver_instance();
-        con = driver->connect("tcp://localhost:3306", "root", "password");
-
-        stmt = con->createStatement();
-        stmt->execute("USE uni_competicoes");
+        stmt = _stmt;
 
         std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("select * from topico;"));
 
@@ -53,9 +49,6 @@ EditarQuestoes::EditarQuestoes(QWidget *parent) :
 EditarQuestoes::~EditarQuestoes()
 {
     delete ui;
-
-    if (con) delete con;
-    if (stmt) delete stmt;
 }
 
 void EditarQuestoes::buscar()

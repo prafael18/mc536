@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditarCurador</class>
+ <widget class="QDialog" name="EditarCurador">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>730</width>
+    <height>594</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="11" column="5">
+    <widget class="QLineEdit" name="etUpdateCurador"/>
+   </item>
+   <item row="5" column="5">
+    <widget class="QLineEdit" name="etBuscar"/>
+   </item>
+   <item row="4" column="3" colspan="3">
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Universidade:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="3">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Query Monta:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="1">
+    <widget class="QLineEdit" name="etCurador"/>
+   </item>
+   <item row="18" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Query Curadores:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" rowspan="17" colspan="2">
+    <widget class="QTableWidget" name="curadoresTable">
+     <column>
+      <property name="text">
+       <string>Cpf</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Universidade</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Confiabilidade</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="13" column="5">
+    <widget class="QLineEdit" name="etRemoveMonta"/>
+   </item>
+   <item row="14" column="3">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>Query Curador:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="5">
+    <widget class="QLineEdit" name="etAdicionarCurador"/>
+   </item>
+   <item row="2" column="5">
+    <widget class="QLineEdit" name="etUniversidade"/>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Cpf:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="5">
+    <widget class="QLineEdit" name="etUpdatePessoa"/>
+   </item>
+   <item row="10" column="3">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Query Pessoa:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Confiabilidade:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="QLineEdit" name="etNome"/>
+   </item>
+   <item row="9" column="3" colspan="3">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Atualizar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Nome:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="3" colspan="3">
+    <widget class="QTableWidget" name="provasTable">
+     <column>
+      <property name="text">
+       <string>Id</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Data</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="5" column="3" colspan="2">
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="text">
+      <string>Buscar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="3" colspan="3">
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="3">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Query Curador:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" rowspan="19">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="5">
+    <widget class="QLineEdit" name="etConfiabilidade"/>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Curadores</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="4" colspan="2">
+    <widget class="QLineEdit" name="etProvas"/>
+   </item>
+   <item row="0" column="5">
+    <widget class="QLineEdit" name="etCpf"/>
+   </item>
+   <item row="18" column="3">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Query Provas:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="5">
+    <widget class="QLineEdit" name="etRemoveCurador"/>
+   </item>
+   <item row="16" column="3" colspan="3">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Provas montadas</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="3" colspan="3">
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="text">
+      <string>Remover</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="5">
+    <widget class="QLineEdit" name="etAdicionarPessoa"/>
+   </item>
+   <item row="6" column="3" colspan="3">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>Adicionar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="3">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Query Pessoa:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="3">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>Query Curador:</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCurador</receiver>
+   <slot>buscar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>899</x>
+     <y>126</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCurador</receiver>
+   <slot>adicionar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>440</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>763</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCurador</receiver>
+   <slot>atualizar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>447</x>
+     <y>220</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>765</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>EditarCurador</receiver>
+   <slot>remover()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>451</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>781</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>buscar()</slot>
+  <slot>adicionar()</slot>
+  <slot>atualizar()</slot>
+  <slot>remover()</slot>
+ </slots>
+</ui>

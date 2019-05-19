@@ -3,7 +3,7 @@
 
 #include <QMessageBox>
 
-EditarCandidato::EditarCandidato(QWidget *parent) :
+EditarCandidato::EditarCandidato(QWidget *parent, sql::Statement *_stmt) :
     QDialog(parent),
     ui(new Ui::EditarCandidato)
 {
@@ -13,29 +13,7 @@ EditarCandidato::EditarCandidato(QWidget *parent) :
 
     showMaximized();
 
-    try {
-        driver = sql::mysql::get_mysql_driver_instance();
-        con = driver->connect("tcp://localhost:3306", "root", "password");
-
-        stmt = con->createStatement();
-        stmt->execute("USE uni_competicoes");
-    } catch (sql::SQLException &e) {
-        QMessageBox msgBox;
-        msgBox.setText(
-            "SQL ERROR: " + QString::fromStdString(e.what()) +
-            "\n\n(MySQL error code: " + QString::number(e.getErrorCode()) +
-            ", SQLState: " + QString::fromStdString(e.getSQLState()) + ")"
-        );
-        msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-        msgBox.setDefaultButton(QMessageBox::Ok);
-        msgBox.exec();
-
-        std::cout << "# ERR: SQLException in " << __FILE__;
-        std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
-        std::cout << "# ERR: " << e.what();
-        std::cout << " (MySQL error code: " << e.getErrorCode();
-        std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
-    }
+    stmt = _stmt;
 
     QHeaderView* header = ui->questaoTable->horizontalHeader();
     header->setSectionResizeMode(QHeaderView::Stretch);
@@ -56,9 +34,6 @@ EditarCandidato::EditarCandidato(QWidget *parent) :
 EditarCandidato::~EditarCandidato()
 {
     delete ui;
-
-    if (con) delete con;
-    if (stmt) delete stmt;
 }
 
 void EditarCandidato::updateTableCandidatos()
@@ -220,8 +195,6 @@ void EditarCandidato::buscaCandidato()
         std::unique_ptr<sql::ResultSet>  res(stmt->executeQuery(query));
 
         ui->etBusca->setText(QString::fromStdString(query));
-
-        fflush(stdout);
 
         ui->etNome->setText("");
         ui->etUniversidade->setText("");
