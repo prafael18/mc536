@@ -188,43 +188,37 @@ void EditarCompeticoes::buscar()
 
 void EditarCompeticoes::novaFase()
 {
+
     bool ok;
-    QString id = QInputDialog::getText(this, tr("QInputDialog::getText()"),
-                                             tr("Id da fase:"), QLineEdit::Normal,
+    QString aprov = QInputDialog::getText(this, tr("QInputDialog::getText()"),
+                                             tr("Numero de Aprovados:"), QLineEdit::Normal,
                                              "", &ok);
-    if (ok && !id.isEmpty()){
-        bool ok;
-        QString aprov = QInputDialog::getText(this, tr("QInputDialog::getText()"),
-                                                 tr("Numero de Aprovados:"), QLineEdit::Normal,
-                                                 "", &ok);
-        if (ok) {
-            try {
-                std::string query = "INSERT INTO fase(id, num_aprov, id_competicao) "
-                                    "VALUES(" + id.toStdString() +
-                                    ", " + aprov.toStdString() +
-                                    ", " + ui->etId->text().toStdString() +
-                                    ")";
+    if (ok) {
+        try {
+            std::string query = "INSERT INTO fase(num_aprov, id_competicao) "
+                                "VALUES(" + aprov.toStdString() +
+                                ", " + ui->etId->text().toStdString() +
+                                ");";
 
-                ui->etNovoCandidato->setText(QString::fromStdString(query));
+            ui->etNovoCandidato->setText(QString::fromStdString(query));
 
-                stmt->execute(query);
-            } catch (sql::SQLException &e) {
-                QMessageBox msgBox;
-                msgBox.setText(
-                    "SQL ERROR: " + QString::fromStdString(e.what()) +
-                    "\n\n(MySQL error code: " + QString::number(e.getErrorCode()) +
-                    ", SQLState: " + QString::fromStdString(e.getSQLState()) + ")"
-                );
-                msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-                msgBox.setDefaultButton(QMessageBox::Ok);
-                msgBox.exec();
+            stmt->execute(query);
+        } catch (sql::SQLException &e) {
+            QMessageBox msgBox;
+            msgBox.setText(
+                "SQL ERROR: " + QString::fromStdString(e.what()) +
+                "\n\n(MySQL error code: " + QString::number(e.getErrorCode()) +
+                ", SQLState: " + QString::fromStdString(e.getSQLState()) + ")"
+            );
+            msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+            msgBox.setDefaultButton(QMessageBox::Ok);
+            msgBox.exec();
 
-                std::cout << "# ERR: SQLException in " << __FILE__;
-                std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
-                std::cout << "# ERR: " << e.what();
-                std::cout << " (MySQL error code: " << e.getErrorCode();
-                std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
-            }
+            std::cout << "# ERR: SQLException in " << __FILE__;
+            std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
+            std::cout << "# ERR: " << e.what();
+            std::cout << " (MySQL error code: " << e.getErrorCode();
+            std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
         }
     }
 
@@ -355,16 +349,14 @@ void EditarCompeticoes::montaProva()
                                 "VALUES(" + dialog->getId().toStdString() +
                                 ", " + dialog->getVersao().toStdString() +
                                 ", " + dialog->getFase().toStdString() +
-                                ")";
+                                ");";
 
             ui->etAddProva->setText(QString::fromStdString(query));
             stmt->execute(query);
 
-            query = "INSERT INTO monta(id, cpf, data) "
+            query = "INSERT INTO monta(id, cpf) "
                                 "VALUES(" + dialog->getId().toStdString() +
-                                ", " + dialog->getCpf().toStdString() +
-                                ", '" + dialog->getData().toStdString() +
-                                "')";
+                                ", " + dialog->getCpf().toStdString() + ");";
 
             ui->etAddMonta->setText(QString::fromStdString(query));
             stmt->execute(query);
@@ -484,11 +476,10 @@ void EditarCompeticoes::resolve()
 
     if(dialog->exec()) {
         try {
-            std::string query = "INSERT INTO resolve(id, cpf, data, codigo) "
+            std::string query = "INSERT INTO resolve(id, cpf, codigo) "
                                 "VALUES(" + dialog->getIdQuestao().toStdString() +
                                 ", " + dialog->getCpf().toStdString() +
-                                ", '" + dialog->getData().toStdString() +
-                                "', '" + dialog->getCodigo().toStdString() +
+                                ", '" + dialog->getCodigo().toStdString() +
                                 "')";
 
             ui->etResolve->setText(QString::fromStdString(query));

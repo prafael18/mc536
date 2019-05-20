@@ -99,9 +99,8 @@ void EditarQuestoes::buscar()
 void EditarQuestoes::adicionar()
 {
     try {
-        std::string query = "INSERT INTO questao(id, nome, nivel, enunciado, entrada, saida, limite_de_tempo, nome_topico) "
-                             "VALUES(" + ui->etId->text().toStdString() +
-                             ", '" + ui->etNome->text().toStdString() +
+        std::string query = "INSERT INTO questao(nome, nivel, enunciado, entrada, saida, limite_de_tempo, nome_topico) "
+                             "VALUES('" + ui->etNome->text().toStdString() +
                              "', " + ui->etNivel->text().toStdString() +
                              ", '" + ui->etEnunciado->text().toStdString() +
                              "', '" + ui->etEntrada->text().toStdString() +

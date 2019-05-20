@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'resolvedialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.9.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,10 +10,13 @@
 #define UI_RESOLVEDIALOG_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 
@@ -23,69 +26,57 @@ class Ui_ResolveDialog
 {
 public:
     QGridLayout *gridLayout;
-    QLabel *label;
+    QLineEdit *etCodigo;
+    QLabel *label_4;
     QLineEdit *etId;
+    QDialogButtonBox *buttonBox;
+    QLabel *label;
     QLabel *label_2;
     QLineEdit *etCpf;
-    QLabel *label_3;
-    QLineEdit *etData;
-    QLabel *label_4;
-    QLineEdit *etCodigo;
-    QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *ResolveDialog)
     {
         if (ResolveDialog->objectName().isEmpty())
-            ResolveDialog->setObjectName(QString::fromUtf8("ResolveDialog"));
+            ResolveDialog->setObjectName(QStringLiteral("ResolveDialog"));
         ResolveDialog->resize(234, 257);
         gridLayout = new QGridLayout(ResolveDialog);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        label = new QLabel(ResolveDialog);
-        label->setObjectName(QString::fromUtf8("label"));
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        etCodigo = new QLineEdit(ResolveDialog);
+        etCodigo->setObjectName(QStringLiteral("etCodigo"));
 
-        gridLayout->addWidget(label, 0, 0, 1, 1);
+        gridLayout->addWidget(etCodigo, 2, 1, 1, 1);
+
+        label_4 = new QLabel(ResolveDialog);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        gridLayout->addWidget(label_4, 2, 0, 1, 1);
 
         etId = new QLineEdit(ResolveDialog);
-        etId->setObjectName(QString::fromUtf8("etId"));
+        etId->setObjectName(QStringLiteral("etId"));
 
         gridLayout->addWidget(etId, 0, 1, 1, 1);
 
+        buttonBox = new QDialogButtonBox(ResolveDialog);
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setOrientation(Qt::Horizontal);
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+
+        gridLayout->addWidget(buttonBox, 3, 0, 1, 2);
+
+        label = new QLabel(ResolveDialog);
+        label->setObjectName(QStringLiteral("label"));
+
+        gridLayout->addWidget(label, 0, 0, 1, 1);
+
         label_2 = new QLabel(ResolveDialog);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setObjectName(QStringLiteral("label_2"));
 
         gridLayout->addWidget(label_2, 1, 0, 1, 1);
 
         etCpf = new QLineEdit(ResolveDialog);
-        etCpf->setObjectName(QString::fromUtf8("etCpf"));
+        etCpf->setObjectName(QStringLiteral("etCpf"));
 
         gridLayout->addWidget(etCpf, 1, 1, 1, 1);
-
-        label_3 = new QLabel(ResolveDialog);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        gridLayout->addWidget(label_3, 2, 0, 1, 1);
-
-        etData = new QLineEdit(ResolveDialog);
-        etData->setObjectName(QString::fromUtf8("etData"));
-
-        gridLayout->addWidget(etData, 2, 1, 1, 1);
-
-        label_4 = new QLabel(ResolveDialog);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        gridLayout->addWidget(label_4, 3, 0, 1, 1);
-
-        etCodigo = new QLineEdit(ResolveDialog);
-        etCodigo->setObjectName(QString::fromUtf8("etCodigo"));
-
-        gridLayout->addWidget(etCodigo, 3, 1, 1, 1);
-
-        buttonBox = new QDialogButtonBox(ResolveDialog);
-        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-
-        gridLayout->addWidget(buttonBox, 4, 0, 1, 2);
 
 
         retranslateUi(ResolveDialog);
@@ -97,11 +88,10 @@ public:
 
     void retranslateUi(QDialog *ResolveDialog)
     {
-        ResolveDialog->setWindowTitle(QApplication::translate("ResolveDialog", "Dialog", nullptr));
-        label->setText(QApplication::translate("ResolveDialog", "Id:", nullptr));
-        label_2->setText(QApplication::translate("ResolveDialog", "Cpf:", nullptr));
-        label_3->setText(QApplication::translate("ResolveDialog", "Data:", nullptr));
-        label_4->setText(QApplication::translate("ResolveDialog", "Path Codigo:", nullptr));
+        ResolveDialog->setWindowTitle(QApplication::translate("ResolveDialog", "Dialog", Q_NULLPTR));
+        label_4->setText(QApplication::translate("ResolveDialog", "Path Codigo:", Q_NULLPTR));
+        label->setText(QApplication::translate("ResolveDialog", "ID:", Q_NULLPTR));
+        label_2->setText(QApplication::translate("ResolveDialog", "CPF:", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -23,11 +23,6 @@ QString ResolveDialog::getCpf()
     return ui->etCpf->text();
 }
 
-QString ResolveDialog::getData()
-{
-    return ui->etData->text();
-}
-
 QString ResolveDialog::getCodigo()
 {
     return ui->etCodigo->text();

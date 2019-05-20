@@ -32,8 +32,3 @@ QString MontaDialog::getCpf()
 {
     return ui->etCpf->text();
 }
-
-QString MontaDialog::getData()
-{
-    return ui->etData->text();
-}

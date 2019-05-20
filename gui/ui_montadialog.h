@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'montadialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.2
+** Created by: Qt User Interface Compiler version 5.9.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,10 +10,13 @@
 #define UI_MONTADIALOG_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 
@@ -23,81 +26,69 @@ class Ui_MontaDialog
 {
 public:
     QGridLayout *gridLayout;
-    QLabel *label;
-    QLineEdit *etId;
-    QLabel *label_2;
     QLineEdit *etVersao;
     QLabel *label_3;
-    QLineEdit *etIdFase;
     QLabel *label_4;
-    QLineEdit *etCpf;
-    QLabel *label_5;
-    QLineEdit *etData;
+    QLineEdit *etId;
+    QLineEdit *etIdFase;
     QDialogButtonBox *buttonBox;
+    QLineEdit *etCpf;
+    QLabel *label;
+    QLabel *label_2;
 
     void setupUi(QDialog *MontaDialog)
     {
         if (MontaDialog->objectName().isEmpty())
-            MontaDialog->setObjectName(QString::fromUtf8("MontaDialog"));
+            MontaDialog->setObjectName(QStringLiteral("MontaDialog"));
         MontaDialog->resize(320, 240);
         gridLayout = new QGridLayout(MontaDialog);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        label = new QLabel(MontaDialog);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        gridLayout->addWidget(label, 0, 0, 1, 1);
-
-        etId = new QLineEdit(MontaDialog);
-        etId->setObjectName(QString::fromUtf8("etId"));
-
-        gridLayout->addWidget(etId, 0, 1, 1, 1);
-
-        label_2 = new QLabel(MontaDialog);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        gridLayout->addWidget(label_2, 1, 0, 1, 1);
-
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         etVersao = new QLineEdit(MontaDialog);
-        etVersao->setObjectName(QString::fromUtf8("etVersao"));
+        etVersao->setObjectName(QStringLiteral("etVersao"));
 
         gridLayout->addWidget(etVersao, 1, 1, 1, 1);
 
         label_3 = new QLabel(MontaDialog);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setObjectName(QStringLiteral("label_3"));
 
         gridLayout->addWidget(label_3, 2, 0, 1, 1);
 
-        etIdFase = new QLineEdit(MontaDialog);
-        etIdFase->setObjectName(QString::fromUtf8("etIdFase"));
-
-        gridLayout->addWidget(etIdFase, 2, 1, 1, 1);
-
         label_4 = new QLabel(MontaDialog);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setObjectName(QStringLiteral("label_4"));
 
         gridLayout->addWidget(label_4, 3, 0, 1, 1);
 
-        etCpf = new QLineEdit(MontaDialog);
-        etCpf->setObjectName(QString::fromUtf8("etCpf"));
+        etId = new QLineEdit(MontaDialog);
+        etId->setObjectName(QStringLiteral("etId"));
 
-        gridLayout->addWidget(etCpf, 3, 1, 1, 1);
+        gridLayout->addWidget(etId, 0, 1, 1, 1);
 
-        label_5 = new QLabel(MontaDialog);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        etIdFase = new QLineEdit(MontaDialog);
+        etIdFase->setObjectName(QStringLiteral("etIdFase"));
 
-        gridLayout->addWidget(label_5, 4, 0, 1, 1);
-
-        etData = new QLineEdit(MontaDialog);
-        etData->setObjectName(QString::fromUtf8("etData"));
-
-        gridLayout->addWidget(etData, 4, 1, 1, 1);
+        gridLayout->addWidget(etIdFase, 2, 1, 1, 1);
 
         buttonBox = new QDialogButtonBox(MontaDialog);
-        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
-        gridLayout->addWidget(buttonBox, 5, 0, 1, 2);
+        gridLayout->addWidget(buttonBox, 4, 0, 1, 2);
+
+        etCpf = new QLineEdit(MontaDialog);
+        etCpf->setObjectName(QStringLiteral("etCpf"));
+
+        gridLayout->addWidget(etCpf, 3, 1, 1, 1);
+
+        label = new QLabel(MontaDialog);
+        label->setObjectName(QStringLiteral("label"));
+
+        gridLayout->addWidget(label, 0, 0, 1, 1);
+
+        label_2 = new QLabel(MontaDialog);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        gridLayout->addWidget(label_2, 1, 0, 1, 1);
 
 
         retranslateUi(MontaDialog);
@@ -109,12 +100,11 @@ public:
 
     void retranslateUi(QDialog *MontaDialog)
     {
-        MontaDialog->setWindowTitle(QApplication::translate("MontaDialog", "Dialog", nullptr));
-        label->setText(QApplication::translate("MontaDialog", "Id:", nullptr));
-        label_2->setText(QApplication::translate("MontaDialog", "Vers\303\243o:", nullptr));
-        label_3->setText(QApplication::translate("MontaDialog", "IdFase:", nullptr));
-        label_4->setText(QApplication::translate("MontaDialog", "Cpf:", nullptr));
-        label_5->setText(QApplication::translate("MontaDialog", "Data:", nullptr));
+        MontaDialog->setWindowTitle(QApplication::translate("MontaDialog", "Dialog", Q_NULLPTR));
+        label_3->setText(QApplication::translate("MontaDialog", "ID Fase:", Q_NULLPTR));
+        label_4->setText(QApplication::translate("MontaDialog", "CPF:", Q_NULLPTR));
+        label->setText(QApplication::translate("MontaDialog", "ID Prova:", Q_NULLPTR));
+        label_2->setText(QApplication::translate("MontaDialog", "Vers\303\243o:", Q_NULLPTR));
     } // retranslateUi
 
 };
