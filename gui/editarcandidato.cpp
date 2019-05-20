@@ -71,10 +71,9 @@ void EditarCandidato::mostraQuestoes()
 {
     try {
         std::string query = \
-                "SELECT r.id, nome "
+                "SELECT id, nome "
                 "FROM (SELECT id FROM resolve WHERE cpf = " + ui->etCpf->text().toStdString() + ") as r "
-                      "JOIN (SELECT id, nome from questao) as q "
-                      "ON r.id = q.id;";
+                      "NATURAL JOIN (SELECT id, nome from questao) as q;";
 
         ui->etQuestao->setText(QString::fromStdString(query));
 
@@ -91,6 +90,8 @@ void EditarCandidato::mostraQuestoes()
 
             ++numQuestoes;
         }
+
+        ui->etTotalQuestoes->setText(QString::number(numQuestoes));
 
         fflush(stdout);
     } catch (sql::SQLException &e) {
@@ -116,8 +117,8 @@ void EditarCandidato::mostraQuestoes()
 void EditarCandidato::mostraCompeticao()
 {
     try {
-        std::string query = "select DISTINCT id, ranking "
-                "from participa WHERE cpf = " + ui->etCpf->text().toStdString() + ";";
+        std::string query = "SELECT nome, ranking "
+                "FROM (SELECT id, ranking FROM participa WHERE cpf = " + ui->etCpf->text().toStdString() + ") as p NATURAL JOIN competicao_academica;";
 
         ui->etCompeticao->setText(QString::fromStdString(query));
 
@@ -129,11 +130,12 @@ void EditarCandidato::mostraCompeticao()
         while(res->next()) {
             ui->competicaoTable->insertRow(numCompeticoes);
 
-            ui->competicaoTable->setItem(numCompeticoes, 0, new QTableWidgetItem(QString::fromStdString(res->getString("id"))));
+            ui->competicaoTable->setItem(numCompeticoes, 0, new QTableWidgetItem(QString::fromStdString(res->getString("nome"))));
             ui->competicaoTable->setItem(numCompeticoes, 1, new QTableWidgetItem(QString::fromStdString(res->getString("ranking"))));
 
             ++numCompeticoes;
         }
+        ui->etNumComp->setText(QString::number(numCompeticoes));
 
         fflush(stdout);
     } catch (sql::SQLException &e) {

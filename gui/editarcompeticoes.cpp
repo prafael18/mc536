@@ -84,7 +84,7 @@ void EditarCompeticoes::buscar()
             ++numTopicos;
         }
 
-        query = "SELECT * FROM participa WHERE id = " + ui->etId->text().toStdString() + ";";
+        query = "SELECT cpf, nome, ranking FROM participa NATURAL JOIN (SELECT cpf, nome FROM pessoa NATURAL JOIN candidato) as p WHERE id = " + ui->etId->text().toStdString() + ";";
 
         ui->etCandidatos->setText(QString::fromStdString(query));
         res.reset(stmt->executeQuery(query));
@@ -97,7 +97,8 @@ void EditarCompeticoes::buscar()
             ui->candidatosTable->insertRow(numTopicos);
 
             ui->candidatosTable->setItem(numTopicos, 0, new QTableWidgetItem(QString::fromStdString(res->getString("cpf"))));
-            ui->candidatosTable->setItem(numTopicos, 1, new QTableWidgetItem(QString::fromStdString(res->getString("ranking"))));
+            ui->candidatosTable->setItem(numTopicos, 1, new QTableWidgetItem(QString::fromStdString(res->getString("nome"))));
+            ui->candidatosTable->setItem(numTopicos, 2, new QTableWidgetItem(QString::fromStdString(res->getString("ranking"))));
 
             ++numTopicos;
         }
@@ -118,6 +119,8 @@ void EditarCompeticoes::buscar()
 
             ++numTopicos;
         }
+
+        ui->etNumFases->setText(QString::number(numTopicos));
 
         //TODO: Add total number of topics
         

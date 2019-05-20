@@ -71,7 +71,7 @@ void EditarProponente::buscar()
             ui->etFormacao->setText(QString::fromStdString(res->getString("formacao_academica")));
         }
 
-        query = "SELECT * FROM propoe WHERE cpf = " + ui->etCpf->text().toStdString() + ";";
+        query = "SELECT id, nome FROM (SELECT id from propoe WHERE cpf = " + ui->etCpf->text().toStdString() + ") as p NATURAL JOIN (SELECT id, nome FROM questao) as q;";
         res.reset(stmt->executeQuery(query));
 
         ui->etQuestoes->setText(QString::fromStdString(query));
@@ -84,10 +84,13 @@ void EditarProponente::buscar()
             ui->questoesTable->insertRow(numQuestoes);
 
             ui->questoesTable->setItem(numQuestoes, 0, new QTableWidgetItem(QString::fromStdString(res->getString("id"))));
-            ui->questoesTable->setItem(numQuestoes, 1, new QTableWidgetItem(QString::fromStdString(res->getString("data"))));
+            ui->questoesTable->setItem(numQuestoes, 1, new QTableWidgetItem(QString::fromStdString(res->getString("nome"))));
 
             ++numQuestoes;
         }
+
+        ui->etNumQuestoes->setText(QString::number(numQuestoes));
+
     } catch (sql::SQLException &e) {
         QMessageBox msgBox;
         msgBox.setText(

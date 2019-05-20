@@ -14,32 +14,108 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="ProponentesAtivos">
+   <item row="12" column="3" colspan="2">
+    <widget class="QPushButton" name="pushButton_3">
      <property name="text">
-      <string>Proponentes</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <string>Remover</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="2" rowspan="19">
+   <item row="13" column="3">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Query Propoe:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLineEdit" name="etNome"/>
+   </item>
+   <item row="8" column="3">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>Query Proponente:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="19" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Query Proponentes:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" rowspan="20">
     <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
     </widget>
    </item>
-   <item row="0" column="3">
-    <widget class="QLabel" name="label_4">
+   <item row="7" column="3">
+    <widget class="QLabel" name="label_13">
      <property name="text">
-      <string>Cpf:</string>
+      <string>Query Pessoa:</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="4">
-    <widget class="QLineEdit" name="etCpf"/>
+   <item row="15" column="3" colspan="2">
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="4">
+    <widget class="QLineEdit" name="etUpdatePessoa"/>
+   </item>
+   <item row="10" column="3">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Query Pessoa:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="3">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>Query Proponente:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="3" colspan="2">
+    <widget class="QTableWidget" name="questoesTable">
+     <column>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="13" column="4">
+    <widget class="QLineEdit" name="etRemovePropoe"/>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Nome:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="4">
+    <widget class="QLineEdit" name="etBuscar"/>
+   </item>
+   <item row="4" column="3" colspan="2">
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
    </item>
    <item row="1" column="0" rowspan="17" colspan="2">
     <widget class="QTableWidget" name="proponenteTable">
@@ -65,42 +141,8 @@
      </column>
     </widget>
    </item>
-   <item row="1" column="3">
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>Nome:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="4">
-    <widget class="QLineEdit" name="etNome"/>
-   </item>
-   <item row="2" column="3">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Universidade:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4">
-    <widget class="QLineEdit" name="etUniversidade"/>
-   </item>
-   <item row="3" column="3">
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>Formação:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="4">
-    <widget class="QLineEdit" name="etFormacao"/>
-   </item>
-   <item row="4" column="3" colspan="2">
-    <widget class="Line" name="line_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
+   <item row="0" column="4">
+    <widget class="QLineEdit" name="etCpf"/>
    </item>
    <item row="5" column="3">
     <widget class="QPushButton" name="pushButton_4">
@@ -109,96 +151,20 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="4">
-    <widget class="QLineEdit" name="etBuscar"/>
-   </item>
-   <item row="6" column="3" colspan="2">
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="text">
-      <string>Adicionar</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="3">
-    <widget class="QLabel" name="label_13">
-     <property name="text">
-      <string>Query Pessoa:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="4">
-    <widget class="QLineEdit" name="etAdicionarPessoa"/>
-   </item>
-   <item row="8" column="3">
-    <widget class="QLabel" name="label_14">
-     <property name="text">
-      <string>Query Proponente:</string>
-     </property>
-    </widget>
-   </item>
    <item row="8" column="4">
     <widget class="QLineEdit" name="etAdicionarProponente"/>
    </item>
-   <item row="9" column="3" colspan="2">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>Atualizar</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="3">
-    <widget class="QLabel" name="label_9">
-     <property name="text">
-      <string>Query Pessoa:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="4">
-    <widget class="QLineEdit" name="etUpdatePessoa"/>
-   </item>
-   <item row="11" column="3">
-    <widget class="QLabel" name="label_10">
-     <property name="text">
-      <string>Query Proponente:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="4">
-    <widget class="QLineEdit" name="etUpdateProponente"/>
-   </item>
-   <item row="12" column="3" colspan="2">
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="text">
-      <string>Remover</string>
-     </property>
-    </widget>
-   </item>
-   <item row="13" column="3">
-    <widget class="QLabel" name="label_11">
-     <property name="text">
-      <string>Query Propoe:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="13" column="4">
-    <widget class="QLineEdit" name="etRemovePropoe"/>
-   </item>
-   <item row="14" column="3">
-    <widget class="QLabel" name="label_12">
-     <property name="text">
-      <string>Query Proponente:</string>
-     </property>
-    </widget>
+   <item row="2" column="4">
+    <widget class="QLineEdit" name="etUniversidade"/>
    </item>
    <item row="14" column="4">
     <widget class="QLineEdit" name="etRemoveProponente"/>
    </item>
-   <item row="15" column="3" colspan="2">
-    <widget class="Line" name="line_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
+   <item row="11" column="4">
+    <widget class="QLineEdit" name="etUpdateProponente"/>
+   </item>
+   <item row="19" column="4">
+    <widget class="QLineEdit" name="etQuestoes"/>
    </item>
    <item row="16" column="3" colspan="2">
     <widget class="QLabel" name="label_6">
@@ -210,39 +176,83 @@
      </property>
     </widget>
    </item>
-   <item row="17" column="3" colspan="2">
-    <widget class="QTableWidget" name="questoesTable">
-     <column>
-      <property name="text">
-       <string>Id</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Data</string>
-      </property>
-     </column>
-    </widget>
+   <item row="7" column="4">
+    <widget class="QLineEdit" name="etAdicionarPessoa"/>
    </item>
-   <item row="18" column="0">
-    <widget class="QLabel" name="label_2">
+   <item row="6" column="3" colspan="2">
+    <widget class="QPushButton" name="pushButton_2">
      <property name="text">
-      <string>Query Proponentes:</string>
+      <string>Adicionar</string>
      </property>
     </widget>
    </item>
-   <item row="18" column="1">
-    <widget class="QLineEdit" name="etProponente"/>
+   <item row="3" column="3">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Formação:</string>
+     </property>
+    </widget>
    </item>
-   <item row="18" column="3">
+   <item row="2" column="3">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Universidade:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="ProponentesAtivos">
+     <property name="text">
+      <string>Proponentes</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="3" colspan="2">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Atualizar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Cpf:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QLineEdit" name="etFormacao"/>
+   </item>
+   <item row="19" column="3">
     <widget class="QLabel" name="label_3">
      <property name="text">
       <string>Query Questões:</string>
      </property>
     </widget>
    </item>
+   <item row="19" column="1">
+    <widget class="QLineEdit" name="etProponente"/>
+   </item>
+   <item row="11" column="3">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Query Proponente:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="3">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Número de Questões:</string>
+     </property>
+    </widget>
+   </item>
    <item row="18" column="4">
-    <widget class="QLineEdit" name="etQuestoes"/>
+    <widget class="QLineEdit" name="etNumQuestoes"/>
    </item>
   </layout>
  </widget>

@@ -83,6 +83,9 @@ void EditarTopico::buscar()
 
             ++numQuestoes;
         }
+
+        ui->etTotalQuestoes->setText(QString::number(numQuestoes));
+
     } catch (sql::SQLException &e) {
         QMessageBox msgBox;
         msgBox.setText(
