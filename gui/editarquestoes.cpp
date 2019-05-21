@@ -136,15 +136,56 @@ void EditarQuestoes::adicionar()
 void EditarQuestoes::atualizar()
 {
     try {
-        std::string query = "UPDATE questao SET "
-                            "nome = '" + ui->etNome->text().toStdString() +
-                            "', nivel = " + ui->etNivel->text().toStdString() +
-                            ", enunciado = '" + ui->etEnunciado->text().toStdString() +
-                            "', entrada = '" + ui->etEntrada->text().toStdString() +
-                            "', saida = '" + ui->etSaida->text().toStdString() +
-                            "', limite_de_tempo = " + ui->etTempo->text().toStdString() +
-                            ", nome_topico = '" + ui->cbTopico->currentText().toStdString() +
-                            "' WHERE id = " + ui->etId->text().toStdString() + ";";
+        std::string query = "UPDATE questao SET";
+
+        int nr_params = 0;
+        if (!ui->etNome->text().isEmpty()) {
+            query += " nome = '" + ui->etNome->text().toStdString() + "'";
+            nr_params++;
+        }
+        if (!ui->etNivel->text().isEmpty()) {
+            if (nr_params > 0) {
+                query += ",";
+            }
+            nr_params++;
+            query += " nivel = " + ui->etNivel->text().toStdString();
+        }
+        if (!ui->etEnunciado->text().isEmpty()) {
+            if (nr_params > 0) {
+                query += ",";
+            }
+            nr_params++;
+            query += " enunciado = '" + ui->etEnunciado->text().toStdString() + "'";
+        }
+        if (!ui->etEntrada->text().isEmpty()) {
+            if (nr_params > 0) {
+                query += ",";
+            }
+            nr_params++;
+            query += " entrada = '" + ui->etEntrada->text().toStdString() + "'";
+        }
+        if (!ui->etSaida->text().isEmpty()) {
+            if (nr_params > 0) {
+                query += ",";
+            }
+            nr_params++;
+            query += " saida = '" + ui->etSaida->text().toStdString() + "'";
+        }
+        if (!ui->etTempo->text().isEmpty()) {
+            if (nr_params > 0) {
+                query += ",";
+            }
+            nr_params++;
+            query += " limite_de_tempo = " + ui->etTempo->text().toStdString();
+        }
+        if (!ui->cbTopico->currentText().isEmpty()) {
+            if (nr_params > 0) {
+                query += ",";
+            }
+            nr_params++;
+            query += " nome_topico = '" + ui->cbTopico->currentText().toStdString() + "'";
+        }
+        query += " WHERE id = " + ui->etId->text().toStdString() + ";";
 
         ui->etUpdate->setText(QString::fromStdString(query));
 
