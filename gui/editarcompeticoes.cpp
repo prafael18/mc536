@@ -200,7 +200,7 @@ void EditarCompeticoes::novaFase()
                                 ", " + ui->etId->text().toStdString() +
                                 ");";
 
-            ui->etNovoCandidato->setText(QString::fromStdString(query));
+            ui->etNovaFase->setText(QString::fromStdString(query));
 
             stmt->execute(query);
         } catch (sql::SQLException &e) {
@@ -314,7 +314,7 @@ void EditarCompeticoes::novoTopico()
                             "')";
 
         if (ok && !nome.isEmpty()){
-            ui->etTopicos->setText(QString::fromStdString(query));
+            ui->etNovoTopico->setText(QString::fromStdString(query));
 
             stmt->execute(query);
         }
@@ -345,21 +345,26 @@ void EditarCompeticoes::montaProva()
 
     if (dialog->exec()) {
         try {
-            std::string query = "INSERT INTO prova(id, versao, id_fase) "
-                                "VALUES(" + dialog->getId().toStdString() +
-                                ", " + dialog->getVersao().toStdString() +
+            std::string query = "INSERT INTO prova(versao, id_fase) "
+                                "VALUES("
+                                "" + dialog->getVersao().toStdString() +
                                 ", " + dialog->getFase().toStdString() +
                                 ");";
 
             ui->etAddProva->setText(QString::fromStdString(query));
             stmt->execute(query);
 
-            query = "INSERT INTO monta(id, cpf) "
-                                "VALUES(" + dialog->getId().toStdString() +
-                                ", " + dialog->getCpf().toStdString() + ");";
+            query = "select LAST_INSERT_ID();";
+            std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(query));
 
-            ui->etAddMonta->setText(QString::fromStdString(query));
-            stmt->execute(query);
+            while(res->next()) {
+                query = "INSERT INTO monta(id, cpf) "
+                                    "VALUES(" + res->getString("LAST_INSERT_ID()") +
+                                    ", " + dialog->getCpf().toStdString() + ");";
+
+                ui->etAddMonta->setText(QString::fromStdString(query));
+                stmt->execute(query);
+            }
         } catch (sql::SQLException &e) {
             QMessageBox msgBox;
             msgBox.setText(
@@ -441,7 +446,7 @@ void EditarCompeticoes::novoCandidato()
                 std::string query = "INSERT INTO participa(id, cpf, ranking) "
                                     "VALUES(" + ui->etId->text().toStdString() +
                                     ", " + cpf.toStdString() +
-                                    ", " + ranking.toStdString() +
+                                    ", " + QString::number(ranking.toInt()).toStdString() +
                                     ")";
 
                 ui->etNovoCandidato->setText(QString::fromStdString(query));

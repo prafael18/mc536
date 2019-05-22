@@ -74,174 +74,49 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-806</y>
-        <width>278</width>
-        <height>1472</height>
+        <y>-716</y>
+        <width>279</width>
+        <height>1503</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_4">
+       <item row="10" column="0" colspan="3">
+        <widget class="QLabel" name="label">
          <property name="text">
-          <string>Id:</string>
+          <string>Topicos</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="18" column="0">
-        <widget class="QLabel" name="label_19">
-         <property name="text">
-          <string>Número de Fases:</string>
-         </property>
-        </widget>
+       <item row="18" column="2">
+        <widget class="QLineEdit" name="etNumFases"/>
        </item>
-       <item row="19" column="2">
-        <widget class="QLineEdit" name="etFases"/>
-       </item>
-       <item row="11" column="0" colspan="3">
-        <widget class="QTableWidget" name="topicosTable">
+       <item row="32" column="0" colspan="3">
+        <widget class="QTableWidget" name="candidatosTable">
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>100</height>
+           <height>130</height>
           </size>
          </property>
+         <column>
+          <property name="text">
+           <string>CPF</string>
+          </property>
+         </column>
          <column>
           <property name="text">
            <string>Nome</string>
           </property>
          </column>
+         <column>
+          <property name="text">
+           <string>Ranking</string>
+          </property>
+         </column>
         </widget>
-       </item>
-       <item row="39" column="0" colspan="2">
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>Resolve</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Local:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" colspan="2">
-        <widget class="QLineEdit" name="etId"/>
-       </item>
-       <item row="24" column="2">
-        <widget class="QLineEdit" name="etProvas"/>
-       </item>
-       <item row="9" column="0" colspan="3">
-        <widget class="Line" name="line_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="28" column="0" colspan="3">
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="0" colspan="3">
-        <widget class="Line" name="line_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="33" column="2">
-        <widget class="QLineEdit" name="etNovoCandidato"/>
-       </item>
-       <item row="8" column="1" colspan="2">
-        <widget class="QLineEdit" name="etAdicionar"/>
-       </item>
-       <item row="27" column="2">
-        <widget class="QLineEdit" name="etAddMonta"/>
-       </item>
-       <item row="8" column="0">
-        <widget class="QPushButton" name="btAdicionar">
-         <property name="text">
-          <string>Adicionar</string>
-         </property>
-        </widget>
-       </item>
-       <item row="35" column="0" colspan="3">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Questões</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0" colspan="3">
-        <widget class="Line" name="line_5">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="37" column="0">
-        <widget class="QLabel" name="label_16">
-         <property name="text">
-          <string>Query Questoes:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1" colspan="2">
-        <widget class="QLineEdit" name="etLocal"/>
-       </item>
-       <item row="27" column="0">
-        <widget class="QLabel" name="label_18">
-         <property name="text">
-          <string>Add em Monta:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1" colspan="2">
-        <widget class="QLineEdit" name="etBuscar"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Nome:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="30" column="0" colspan="3">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Participantes</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1" colspan="2">
-        <widget class="QLineEdit" name="etData"/>
-       </item>
-       <item row="24" column="0">
-        <widget class="QLabel" name="label_15">
-         <property name="text">
-          <string>Query Provas:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="21" column="0" colspan="3">
-        <widget class="Line" name="line_6">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="2">
-        <widget class="QLineEdit" name="etNovaFase"/>
        </item>
        <item row="23" column="0" colspan="3">
         <widget class="QTableWidget" name="provasTable">
@@ -278,59 +153,22 @@
          </column>
         </widget>
        </item>
-       <item row="26" column="2">
-        <widget class="QLineEdit" name="etAddProva"/>
-       </item>
-       <item row="12" column="2">
-        <widget class="QLineEdit" name="etTopicos"/>
-       </item>
-       <item row="37" column="2">
-        <widget class="QLineEdit" name="etQuestoes"/>
-       </item>
-       <item row="6" column="0">
-        <widget class="QPushButton" name="btBuscar">
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>Buscar</string>
+          <string>Nome:</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Data:</string>
+       <item row="21" column="0" colspan="3">
+        <widget class="Line" name="line_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="25" column="0" colspan="3">
-        <widget class="QPushButton" name="btMontaProva">
-         <property name="text">
-          <string>Montar Prova</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="0" colspan="2">
-        <widget class="QPushButton" name="btNovoTopico">
-         <property name="text">
-          <string>Novo Topico</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="0" colspan="2">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Query topicos:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="33" column="0" colspan="2">
-        <widget class="QPushButton" name="btNovoCandidato">
-         <property name="text">
-          <string>Novo Candidato</string>
-         </property>
-        </widget>
-       </item>
-       <item row="16" column="0" colspan="3">
-        <widget class="QTableWidget" name="fasesTable">
+       <item row="11" column="0" colspan="3">
+        <widget class="QTableWidget" name="topicosTable">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -339,58 +177,12 @@
          </property>
          <column>
           <property name="text">
-           <string>Id</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Numero Aprovados</string>
+           <string>Nome</string>
           </property>
          </column>
         </widget>
        </item>
-       <item row="10" column="0" colspan="3">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Topicos</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="34" column="0" colspan="3">
-        <widget class="Line" name="line_7">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1" colspan="2">
-        <widget class="QLineEdit" name="etNome"/>
-       </item>
-       <item row="26" column="0">
-        <widget class="QLabel" name="label_17">
-         <property name="text">
-          <string>Add em Prova:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="32" column="0" colspan="2">
-        <widget class="QLabel" name="label_10">
-         <property name="text">
-          <string>Query Candidatos:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="0">
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Query fases:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="36" column="0" colspan="3">
+       <item row="37" column="0" colspan="3">
         <widget class="QTableWidget" name="questoesTable">
          <property name="minimumSize">
           <size>
@@ -420,31 +212,170 @@
          </column>
         </widget>
        </item>
-       <item row="39" column="2">
+       <item row="19" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Query fases:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="34" column="2">
+        <widget class="QLineEdit" name="etNovoCandidato"/>
+       </item>
+       <item row="16" column="0" colspan="3">
+        <widget class="QTableWidget" name="fasesTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>100</height>
+          </size>
+         </property>
+         <column>
+          <property name="text">
+           <string>Id</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Numero Aprovados</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="btAtualizar">
+         <property name="text">
+          <string>Atualizar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QPushButton" name="btBuscar">
+         <property name="text">
+          <string>Buscar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="33" column="0" colspan="2">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Query Candidatos:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="19" column="2">
+        <widget class="QLineEdit" name="etFases"/>
+       </item>
+       <item row="7" column="1" colspan="2">
+        <widget class="QLineEdit" name="etAtualizar"/>
+       </item>
+       <item row="13" column="2">
+        <widget class="QLineEdit" name="etNovoTopico"/>
+       </item>
+       <item row="12" column="2">
+        <widget class="QLineEdit" name="etTopicos"/>
+       </item>
+       <item row="40" column="2">
         <widget class="QLineEdit" name="etResolve"/>
        </item>
-       <item row="32" column="2">
-        <widget class="QLineEdit" name="etCandidatos"/>
-       </item>
-       <item row="22" column="0" colspan="3">
-        <widget class="QLabel" name="label_13">
+       <item row="24" column="0">
+        <widget class="QLabel" name="label_15">
          <property name="text">
-          <string>Provas</string>
+          <string>Query Provas:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Id:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Data:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="31" column="0" colspan="3">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Participantes</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="20" column="0" colspan="2">
-        <widget class="QPushButton" name="btNovaFase">
+       <item row="8" column="0">
+        <widget class="QPushButton" name="btAdicionar">
          <property name="text">
-          <string>Nova Fase</string>
+          <string>Adicionar</string>
          </property>
         </widget>
        </item>
-       <item row="7" column="1" colspan="2">
-        <widget class="QLineEdit" name="etAtualizar"/>
+       <item row="40" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Resolve</string>
+         </property>
+        </widget>
+       </item>
+       <item row="38" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Query Questoes:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="25" column="0" colspan="3">
+        <widget class="QPushButton" name="btMontaProva">
+         <property name="text">
+          <string>Montar Prova</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QLineEdit" name="etData"/>
+       </item>
+       <item row="9" column="0" colspan="3">
+        <widget class="Line" name="line_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1" colspan="2">
+        <widget class="QLineEdit" name="etAdicionar"/>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="QLineEdit" name="etLocal"/>
+       </item>
+       <item row="28" column="0">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>Add em Monta:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0" colspan="2">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Query topicos:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="35" column="0" colspan="3">
+        <widget class="Line" name="line_7">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="26" column="2">
+        <widget class="QLineEdit" name="etAddProva"/>
        </item>
        <item row="15" column="0" colspan="3">
         <widget class="QLabel" name="label_2">
@@ -456,52 +387,135 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="0">
-        <widget class="QPushButton" name="btAtualizar">
+       <item row="33" column="2">
+        <widget class="QLineEdit" name="etCandidatos"/>
+       </item>
+       <item row="36" column="0" colspan="3">
+        <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>Atualizar</string>
+          <string>Questões</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="13" column="2">
-        <widget class="QLineEdit" name="etNovoTopico"/>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLineEdit" name="etNome"/>
        </item>
-       <item row="38" column="2">
-        <widget class="QLineEdit" name="etAddQuestao"/>
+       <item row="20" column="0" colspan="2">
+        <widget class="QPushButton" name="btNovaFase">
+         <property name="text">
+          <string>Nova Fase</string>
+         </property>
+        </widget>
        </item>
-       <item row="38" column="0" colspan="2">
+       <item row="29" column="0" colspan="3">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="26" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Add em Prova:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="39" column="0" colspan="2">
         <widget class="QPushButton" name="pushButton_2">
          <property name="text">
           <string>Add Questão</string>
          </property>
         </widget>
        </item>
-       <item row="18" column="2">
-        <widget class="QLineEdit" name="etNumFases"/>
+       <item row="38" column="2">
+        <widget class="QLineEdit" name="etQuestoes"/>
        </item>
-       <item row="31" column="0" colspan="3">
-        <widget class="QTableWidget" name="candidatosTable">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>130</height>
-          </size>
+       <item row="18" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>Número de Fases:</string>
          </property>
-         <column>
-          <property name="text">
-           <string>CPF</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Nome</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Ranking</string>
-          </property>
-         </column>
+        </widget>
+       </item>
+       <item row="28" column="2">
+        <widget class="QLineEdit" name="etAddMonta"/>
+       </item>
+       <item row="24" column="2">
+        <widget class="QLineEdit" name="etProvas"/>
+       </item>
+       <item row="20" column="2">
+        <widget class="QLineEdit" name="etNovaFase"/>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QLineEdit" name="etId"/>
+       </item>
+       <item row="39" column="2">
+        <widget class="QLineEdit" name="etAddQuestao"/>
+       </item>
+       <item row="5" column="0" colspan="3">
+        <widget class="Line" name="line_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1" colspan="2">
+        <widget class="QLineEdit" name="etBuscar"/>
+       </item>
+       <item row="13" column="0" colspan="2">
+        <widget class="QPushButton" name="btNovoTopico">
+         <property name="text">
+          <string>Novo Topico</string>
+         </property>
+        </widget>
+       </item>
+       <item row="34" column="0" colspan="2">
+        <widget class="QPushButton" name="btNovoCandidato">
+         <property name="text">
+          <string>Novo Candidato</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Local:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="22" column="0" colspan="3">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Provas</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0" colspan="3">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="27" column="0" colspan="2">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Id da última prova:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="27" column="2">
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="text">
+          <string>select LAST_INSERT_ID()</string>
+         </property>
         </widget>
        </item>
       </layout>

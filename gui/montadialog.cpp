@@ -15,7 +15,7 @@ MontaDialog::~MontaDialog()
 
 QString MontaDialog::getId()
 {
-    return ui->etId->text();
+//    return ui->etId->text();
 }
 
 QString MontaDialog::getVersao()
