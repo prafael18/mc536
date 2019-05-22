@@ -101,11 +101,11 @@ void EditarQuestoes::adicionar()
     try {
         std::string query = "INSERT INTO questao(nome, nivel, enunciado, entrada, saida, limite_de_tempo, nome_topico) "
                              "VALUES('" + ui->etNome->text().toStdString() +
-                             "', " + ui->etNivel->text().toStdString() +
+                             "', " + QString::number(ui->etNivel->text().toInt()).toStdString() +
                              ", '" + ui->etEnunciado->text().toStdString() +
                              "', '" + ui->etEntrada->text().toStdString() +
                              "', '" + ui->etSaida->text().toStdString() +
-                             "', " + ui->etTempo->text().toStdString() +
+                             "', " + QString::number(ui->etTempo->text().toFloat()).toStdString() +
                              ", '" + ui->cbTopico->currentText().toStdString() +
                              "');";
 

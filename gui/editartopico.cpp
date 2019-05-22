@@ -140,7 +140,7 @@ void EditarTopico::adicionar()
     try {
         std::string query = "INSERT INTO topico(nome, especificidade) "
                              "VALUES('" + ui->etNome->text().toStdString() +
-                             "', " + ui->etEspecificidade->text().toStdString() +
+                             "', " + QString::number(ui->etEspecificidade->text().toInt()).toStdString() +
                              ");";
 
         ui->etAdicionarTopico->setText(QString::fromStdString(query));

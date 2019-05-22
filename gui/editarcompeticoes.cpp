@@ -228,9 +228,9 @@ void EditarCompeticoes::novaFase()
 void EditarCompeticoes::adicionar()
 {
     try {
-        std::string query = "INSERT INTO competicao_academica(id, nome, data, local) "
-                             "VALUES(" + ui->etId->text().toStdString() +
-                             ", '" + ui->etNome->text().toStdString() +
+        std::string query = "INSERT INTO competicao_academica(nome, data, local) "
+                             "VALUES(" /*+ ui->etId->text().toStdString() +*/
+                             "'" + ui->etNome->text().toStdString() +
                              "', '" + ui->etData->text().toStdString() +
                              "', '" + ui->etLocal->text().toStdString() +
                              "');";

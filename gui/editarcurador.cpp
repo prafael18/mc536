@@ -119,7 +119,7 @@ void EditarCurador::adicionar()
         stmt->execute(query);
 
         query = "INSERT INTO curador(cpf, confiabilidade) VALUES(" + ui->etCpf->text().toStdString() +
-                ", " + ui->etConfiabilidade->text().toStdString() + ");";
+                ", " + QString::number(ui->etConfiabilidade->text().toFloat()).toStdString() + ");";
 
         ui->etAdicionarCurador->setText(QString::fromStdString(query));
         stmt->execute(query);
